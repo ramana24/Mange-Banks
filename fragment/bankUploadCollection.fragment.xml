@@ -1,0 +1,40 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout">
+	
+	<UploadCollection
+		id="fin.cash.bankmaster.manage.bankUploadCollection"
+		uploadUrl="/sap/opu/odata/sap/CV_ATTACHMENT_SRV/OriginalContentSet"
+		items="{/dataitems}"
+		change="onUploadChanged"
+		uploadComplete="onUploadCompleted"
+		fileDeleted="onFileDeleted"
+		sameFilenameAllowed="true"
+		beforeUploadStarts="beforeUploadStarts">
+		
+		<UploadCollectionItem id="_IDEGen_uploadcollectionitem0"
+			url="{url}"
+			documentId="{FileId}"
+			fileName="{Filename}"
+			attributes="{attributes}"
+			mimeType="{content_type}"
+			enableEdit="{enableEdit}"
+			enableDelete="{enableDelete}"
+			visibleEdit="{visibleEdit}"
+			visibleDelete="{enableDelete}">
+				<attributes>
+					<ObjectAttribute id="_IDEGen_objectattribute0"
+						title="{title}"
+						text="{path:'text', formatter:'.formatter.formatAttribute'}" />	
+				</attributes>
+			</UploadCollectionItem>
+			
+	</UploadCollection>
+	
+</core:FragmentDefinition>

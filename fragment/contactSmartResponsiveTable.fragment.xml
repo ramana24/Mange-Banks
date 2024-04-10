@@ -1,0 +1,25 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<smarttable:SmartTable id="fin.cash.bankmaster.manage.contactSmartResponsiveTable" tableType="ResponsiveTable" entitySet="BpContactSet"
+		enableAutoBinding="false" header="{i18n>CONTACT_SMART_RESPONSIVE_TABLE_HEADER}" showRowCount="true" useVariantManagement="true"
+		beforeRebindTable="onBeforeRebindContactTable" persistencyKey="fin.cash.bankmaster.manage.contactPersistencyKey" placeToolbarInTable="true"
+		demandPopin="true" ignoreFromPersonalisation="BankName,CountryName,FunctionName,BpNumberName,ContactBusinessNoFullname"
+		initialise="onContactTableInitialized">
+		<smarttable:customToolbar>
+			<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent">
+				<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+				<Button text="{i18n>MAINTAIN_CONTACTPERSONS}" press="onMaintainContactPersonPressed" id="maintainContactPersonButton"
+					enabled="{= ${viewMode>/mode} === 'edit' &amp;&amp; !${bpNumber} }"/>
+			</OverflowToolbar>
+		</smarttable:customToolbar>
+		<smarttable:semanticObjectController>
+			<smartlink:SemanticObjectController id="contactTableSemanticObjectController" beforePopoverOpens="onBeforePopoverOpens" ignoredFields=""/>
+		</smarttable:semanticObjectController>
+		<Table id="onContactTableMode" sticky="ColumnHeaders,HeaderToolbar" mode="{= ${viewMode>/mode} === 'edit' ? 'MultiSelect' : 'None'}"></Table>
+	</smarttable:SmartTable>
+</core:FragmentDefinition>

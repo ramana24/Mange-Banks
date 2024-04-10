@@ -1,0 +1,145 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns="sap.uxap" xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:ushell="sap.ushell.ui" controllerName="fin.cash.bankmaster.manage.controller.HouseBank" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartlink="sap.ui.comp.navpopover" xmlns:smartField="sap.ui.comp.smartfield">
+	<ObjectPageLayout id="HouseBankViewObjectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle id="HouseBankViewDynamicHeader">
+				<heading>
+					<m:Title id="housebankviewtitle" text="{HouseBankKey}"/>
+				</heading>
+				<actions>
+					<m:Button id="fin.cash.bankmaster.manage.editButton" press="onEditButtonPressed" text="{i18n>EDIT_BUTTON}" tooltip="{i18n>EDIT_TOOLTIP}"
+						type="Emphasized"/>
+					<m:Button id="fin.cash.bankmaster.manage.share" icon="sap-icon://action" tooltip="{i18n>SHARE_BUTTON}" type="Transparent"
+						press="onShareButtonPressed"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<sections>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.HouseBankSmartFormSection" title="{i18n>HOUSE_BANK_SMARTFORM_TITLE}">
+				<subSections>
+					<ObjectPageSubSection id="_IDEGen_objectpagesubsection0" title="">
+						<smartForm:SmartForm id="fin.cash.bankmaster.manage.houseBankSmartForm">
+							<smartForm:layout>
+								<smartForm:ColumnLayout id="_IDEGen_layout0" columnsM="2" columnsL="3" columnsXL="4"/>
+							</smartForm:layout>
+							<smartForm:semanticObjectController>
+								<smartlink:SemanticObjectController id="ManageBanksPageSemanticObjectController" beforePopoverOpens="onBeforePopoverOpens"/>
+							</smartForm:semanticObjectController>
+							<smartForm:customToolbar>
+								<m:OverflowToolbar id="_IDEGen_overflowtoolbar0" visible="false"/>
+							</smartForm:customToolbar>
+							<smartForm:Group id="_IDEGen_group0" label="{i18n>HOUSE_BANK_DATA_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement0">
+									<smartField:SmartField id="companyCodeField" value="{CompanyCode}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement1">
+									<smartField:SmartField id="houseBankKeyField" value="{HouseBankKey}"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="fin.cash.bankmaster.manage.houseBankSmartForm.bankGroup" label="{i18n>CONTROL_DATA_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement3">
+									<smartField:SmartField id="_IDEGen_smartfield1" value="{BankCountry}" editable="false"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement2" label="{/#Bank/BankInternalId/@sap:label}">
+									<smartlink:SmartLink id="_IDEGen_smartfield0" text="{parts:['BankInternalId','BankName'],formatter:'.formatter.formatKeyAndDescription'}"
+										semanticObject="Bank"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="fin.cash.bankmaster.manage.houseBankSmartForm.addressGroup" label="{i18n>ADDRESS_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement4">
+									<smartField:SmartField id="_IDEGen_smartfield2" value="{BankName}" editable="false"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement5">
+									<smartField:SmartField id="_IDEGen_smartfield3" value="{Region}" editable="false"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement6">
+									<smartField:SmartField id="_IDEGen_smartfield4" value="{BankStreet}" editable="false"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement7">
+									<smartField:SmartField id="_IDEGen_smartfield5" value="{BankBranch}" editable="false"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="_IDEGen_group1" label="{i18n>COMMUNICATIONS_DATA_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement8">
+									<smartField:SmartField id="_IDEGen_smartfield6" value="{Telephone}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement9">
+									<smartField:SmartField id="_IDEGen_smartfield7" value="{TaxNumber}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement10">
+									<smartField:SmartField value="{NameOfContactPerson}" id="NameOfContactPerson" change="onNameOfContactPersonChanged"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="_IDEGen_group2" label="{i18n>GENERAL_DATA_FOR_DATA_MEDIUM_EXCHANGE_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement11">
+									<smartField:SmartField id="_IDEGen_smartfield8" value="{AlternativeBankId}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement12">
+									<smartField:SmartField id="_IDEGen_smartfield9" value="{BankNoReceiver}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement13">
+									<smartField:SmartField id="_IDEGen_smartfield10" value="{CustomerNumber}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement14">
+									<smartField:SmartField id="_IDEGen_smartfield11" value="{CompanyNumber}"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="_IDEGen_group3" label="{i18n>CHARGES_ACCOUNT_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement15">
+									<smartField:SmartField id="_IDEGen_smartfield12" value="{BankNumber}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement16">
+									<smartField:SmartField id="_IDEGen_smartfield13" value="{AccountNumber}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement17">
+									<smartField:SmartField id="_IDEGen_smartfield14" value="{ControlKey}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement18">
+									<smartField:SmartField id="_IDEGen_smartfield15" value="{IsoCurrencyCode}"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="_IDEGen_group4" label="{i18n>EXECUTION_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement19">
+									<smartField:SmartField id="_IDEGen_smartfield16" value="{InstructionKey}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement20">
+									<smartField:SmartField id="_IDEGen_smartfield17" value="{LeadDays}"/>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+							<smartForm:Group id="_IDEGen_group5" label="{i18n>EDI_PARTNER_PROFILES_GROUP_LABEL}">
+								<smartForm:GroupElement id="_IDEGen_groupelement21">
+									<smartField:SmartField id="_IDEGen_smartfield18" value="{PartnerNumber}"/>
+								</smartForm:GroupElement>
+								<smartForm:GroupElement id="_IDEGen_groupelement22">
+									<smartField:SmartField id="_IDEGen_smartfield19" value="{TypeOfSignature}">
+										<smartField:configuration>
+											<smartField:Configuration id="_IDEGen_configuration0" controlType="dropDownList" displayBehaviour="idAndDescription"/>
+										</smartField:configuration>
+									</smartField:SmartField>
+								</smartForm:GroupElement>
+							</smartForm:Group>
+						</smartForm:SmartForm>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar id="_IDEGen_overflowtoolbar1">
+				<m:Button id="messagesIndicator" icon="sap-icon://alert" type="Emphasized" press="onMessagePopoverPressed"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer0"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer1"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer2"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer3"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer4"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer5"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer6"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer7"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer8"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer9"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer10"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer11"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer12"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer13"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer14"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer15"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer16"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer17"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer18"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer19"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer20"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer21"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer22"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer23"/>
+				<m:Button id="fin.cash.bankmaster.manage.saveButton" press="onSaveButtonPressed" text="{i18n>SAVE_BUTTON}" tooltip="{i18n>SAVE_TOOLTIP}"
+					type="Emphasized"/>
+				<m:Button id="fin.cash.bankmaster.manage.cancelButton" press="onCancelButtonPressed" text="{i18n>CANCEL_BUTTON}"
+					tooltip="{i18n>CANCEL_TOOLTIP}"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

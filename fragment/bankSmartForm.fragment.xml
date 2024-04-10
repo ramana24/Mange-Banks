@@ -1,0 +1,94 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:forms="sap.ui.layout.form"
+	xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartlink="sap.ui.comp.navpopover">
+	<smartForm:SmartForm id="fin.cash.bankmaster.manage.bankSmartForm" title="{i18n>BANK_SMARTFORM_TITLE}"
+		editable="{= ${viewMode>/mode} !== 'read'}">
+		<smartForm:layout>
+			<smartForm:ColumnLayout id="_IDEGen_layout0" columnsM="2" columnsL="3" columnsXL="4"/>
+		</smartForm:layout>
+		<smartForm:customToolbar>
+			<OverflowToolbar id="_IDEGen_overflowtoolbar0" visible="false"/>
+		</smartForm:customToolbar>
+		<smartForm:semanticObjectController>
+			<smartlink:SemanticObjectController id="BankFormSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+		</smartForm:semanticObjectController>
+		<smartForm:Group id="_IDEGen_group0" label="{i18n>CONTROL_DATA_GROUP_LABEL}">
+			<smartForm:GroupElement id="_IDEGen_groupelement0">
+				<smartField:SmartField id="bankCountryField" value="{BankCountry}"></smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement1">
+				<smartField:SmartField id="bankKeyField" value="{BankInternalId}">
+					<smartField:configuration>
+						<smartField:Configuration id="bankkeydisplaybehavior" displayBehaviour="idOnly"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement2">
+				<smartField:SmartField id="bankNameField" value="{BankName}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement3">
+				<smartField:SmartField id="swiftField" value="{Swift}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="internalBankCategoryGroupElement" label="{i18n>BANK_CATEGORY}">
+				<smartField:SmartField id="internalBankCategory" value="{InternalBankCategory}">
+					<smartField:configuration>
+						<smartField:Configuration id="internalBankCategoryDispBehavior" displayBehaviour="descriptionOnly" controlType="dropDownList"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement4">
+				<smartField:SmartField id="bankGroupField" value="{BankGroup}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement5">
+				<smartField:SmartField id="bankNumberField" value="{BankNumber}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="ruleForIBSImport" label="{i18n>RULE_ASSIGMENT_BANK_LEVEL}">
+				<smartField:SmartField id="_IDEGen_smartfield2" value="{Ruleforintrdaybnkstatimport}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="usedUnitCountElement" label="{i18n>USED_UNITS_GROUP_LABEL}"
+				visible="{= ${viewMode>/hasUsedUnitCount} &amp;&amp; ${viewMode>/mode} !== 'create' }">
+				<Link id="usedUnitCountField" press="onUsedUnitLinkPressed"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="ratingGroup" label="{i18n>RISK_INFORMATION_GROUP_LABEL}"
+			visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${InternalBankCategory} !== '3' &amp;&amp; ${InternalBankCategory} !== '9'}">
+			<smartForm:GroupElement id="bpNumberElement" label="{i18n>RISK_BUSINESS_PARTNER}">
+				<smartField:SmartField id="_IDEGen_smartfield1" value="{BpNumber}" change="onBpNumberFieldChanged"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement12">
+				<smartField:SmartField id="ratingSelect" value="{Rating}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="_IDEGen_group1" label="{i18n>ADDRESS_GROUP_LABEL}">
+			<smartForm:GroupElement id="_IDEGen_groupelement7">
+				<smartField:SmartField id="bankRegionField" value="{Region}"></smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement8">
+				<smartField:SmartField id="_IDEGen_smartfield4" value="{BankStreet}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement9">
+				<smartField:SmartField id="_IDEGen_smartfield5" value="{BankCity}" showValueHelp="false"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement10">
+				<smartField:SmartField id="_IDEGen_smartfield6" value="{BankBranch}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement11">
+				<Link id="fin.cash.bankmaster.manage.advancedAddressLink" text="{i18n>ADVANCES_ADDRESS}" press="onAdvancedAddressLinkPressed"
+					visible="{= ${viewMode>/mode} !== 'create' }" tooltip="{i18n>ADVANCES_ADDRESS_TOOLTIP}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="_IDEGen_group2" label="{i18n>DELETION_INFORMATION_GROUP_LABEL}" visible="{= ${viewMode>/mode} !== 'create'}">
+			<smartForm:GroupElement id="deletionMarkFieldGroup">
+				<smartField:SmartField id="deletionMarkField" value="{DeletionMark}" change="onDeletionMarkChanged">
+					<smartField:configuration>
+						<smartField:Configuration id="_IDEGen_configuration1" controlType="checkBox"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

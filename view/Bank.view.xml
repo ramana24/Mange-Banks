@@ -1,0 +1,130 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:semantic="sap.m.semantic" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f" xmlns:ushell="sap.ushell.ui" controllerName="fin.cash.bankmaster.manage.controller.Bank">
+	<ObjectPageLayout id="BankViewObjectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle id="BankViewDynamicHeader">
+				<heading>
+					<m:Title text="{BankInternalId}" id="BankViewHeaderTitle"/>
+				</heading>
+				<actions>
+					<m:Button id="fin.cash.bankmaster.manage.editButton" press="onEditButtonPressed" text="{i18n>EDIT_BUTTON}" tooltip="{i18n>EDIT_TOOLTIP}"
+						type="Emphasized" visible="{= ${viewMode>/mode} === 'read'}"/>
+					<m:Button id="fin.cash.bankmaster.manage.displayButton" press="onDisplayButtonPressed" text="{i18n>DISPLAY_BUTTON}"
+						tooltip="{i18n>DISPLAY_TOOLTIP}"/>
+					<m:Button id="fin.cash.bankmaster.manage.markButton" press="onMarkButtonPressed" visible="{= ${viewMode>/mode} === 'read'}"
+						text="{= ${DeletionMark} === 'X' ? ${i18n>UNMARK_BUTTON} : ${i18n>MARK_BUTTON} }"
+						tooltip="{= ${DeletionMark} === 'X' ? ${i18n>UNMARK_TOOLTIP} : ${i18n>MARK_TOOLTIP}}"/>
+					<m:Button id="fin.cash.bankmaster.manage.bankview.share" icon="sap-icon://action" tooltip="{i18n>SHARE_BUTTON}" type="Transparent"
+						press="onShareButtonPressed"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<sections>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.bankSmartFormSection" title="{i18n>GENERAL_DATA_ICONTABFILTER_TEXT}">
+				<subSections>
+					<ObjectPageSubSection id="_IDEGen_objectpagesubsection0" title="">
+						<blocks>
+							<core:Fragment id="_IDEGen_fragment0" fragmentName="fin.cash.bankmaster.manage/fragment/bankSmartForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.houseBankSmartResponsiveTableSection" title=""
+				visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${viewMode>/mode} !== 'create' }">
+				<subSections>
+					<ObjectPageSubSection id="houseBankSubSection" title="{i18n>HOUSE_BANK_OBJECTPAGESECTION_TEXT}">
+						<blocks>
+							<core:Fragment id="_IDEGen_fragment1" fragmentName="fin.cash.bankmaster.manage/fragment/houseBankSmartResponsiveTable" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.contactSmartResponsiveTableSection" title=""
+				visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${viewMode>/mode} !== 'create' }">
+				<subSections>
+					<ObjectPageSubSection id="contactSubSection" title="{i18n>CONTACTS_OBJECTPAGESECTION_TEXT}">
+						<blocks>
+							<core:Fragment id="_IDEGen_fragment2" fragmentName="fin.cash.bankmaster.manage/fragment/contactSmartResponsiveTable" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.relatedBranchSmartResponsiveTableSection" title=""
+				visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${viewMode>/mode} !== 'create' }">
+				<subSections>
+					<ObjectPageSubSection id="relatedBranchSubSection" title="{i18n>RELATED_OBJECTPAGESECTION_TEXT}">
+						<blocks>
+							<ObjectPageLazyLoader id="relatedBranchLazyLoader">
+								<core:Fragment id="_IDEGen_fragment3" fragmentName="fin.cash.bankmaster.manage/fragment/relatedBranchSmartResponsiveTable" type="XML"/>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.serviceCodeSmartResponsiveTableSection" title=""
+				visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${viewMode>/mode} !== 'create' }">
+				<subSections>
+					<ObjectPageSubSection id="serviceSubSection" title="{i18n>SERVICE_OBJECTPAGESECTION_TEXT}">
+						<blocks>
+							<ObjectPageLazyLoader id="bankServiceMappingLazyLoader">
+								<core:Fragment id="_IDEGen_fragment4" fragmentName="fin.cash.bankmaster.manage/fragment/bankServiceMappingSmartTable" type="XML"/>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.defaultableBPResponsiveTableSection" title=""
+				visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${viewMode>/mode} !== 'create' &amp;&amp; ${InternalBankCategory} !== '3' &amp;&amp; ${InternalBankCategory} !== '9'}">
+				<subSections>
+					<ObjectPageSubSection id="defaultableBPSubSection" title="{i18n>DEFAULTABLE_PARTNER}">
+						<blocks>
+							<ObjectPageLazyLoader id="defaultableBPLazyLoader">
+								<core:Fragment id="defaultBPTableFragment" fragmentName="fin.cash.bankmaster.manage/fragment/defaultableBPSmartTable" type="XML"/>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.bankUploadCollectionSection" title="" visible="false">
+				<subSections>
+					<ObjectPageSubSection id="attachmentSubSection" title="{i18n>ATTACHMENTS_OBJECTPAGESECTION_TEXT}">
+						<blocks>
+							<ObjectPageLazyLoader id="attachmentLazyLoader">
+								<core:ComponentContainer id="attachmentServiceFile"/>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.historySmartResponsiveTableSection" title=""
+				visible="{= ${viewMode>/version} !== 'basic' &amp;&amp; ${viewMode>/mode} !== 'create' }">
+				<subSections>
+					<ObjectPageSubSection id="historySubSection" title="{i18n>HISTORY_OBJECTPAGESECTION_TEXT}">
+						<blocks>
+							<ObjectPageLazyLoader id="historyLazyLoader">
+								<core:Fragment id="_IDEGen_fragment5" fragmentName="fin.cash.bankmaster.manage/fragment/historySmartResponsiveTable" type="XML"/>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar id="_IDEGen_overflowtoolbar0">
+				<m:Button id="messagesIndicator" icon="sap-icon://alert" type="Emphasized" press="onMessagePopoverPressed"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer0"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer1"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer2"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer3"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer4"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer5"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer6"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer7"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer8"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer9"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer10"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer11"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer12"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer13"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer14"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer15"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer16"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer17"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer18"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer19"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer20"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer21"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer22"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer23"/>
+				<m:Button id="fin.cash.bankmaster.manage.saveButton" press="onSaveButtonPressed" text="{i18n>SAVE_BUTTON}" tooltip="{i18n>SAVE_TOOLTIP}"
+					type="Emphasized" visible="{= ${viewMode>/mode} !== 'read' }"/>
+				<m:Button id="fin.cash.bankmaster.manage.cancelButton" press="onCancelButtonPressed" text="{i18n>CANCEL_BUTTON}"
+					tooltip="{i18n>CANCEL_TOOLTIP}" visible="{= ${viewMode>/mode} !== 'read' }"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

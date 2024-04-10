@@ -1,0 +1,42 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition
+	xmlns:m="sap.m"
+	xmlns:commons="sap.suite.ui.commons"
+	xmlns:core="sap.ui.core">
+	
+		<commons:Timeline 
+			id="idTimeline"
+			axisOrientation="Horizontal"
+		 	enableBackendFilter="true" 
+		 	growing="true"
+			growingThreshold="3" 
+			enableScroll="false"
+			showHeaderBar="true" 
+		 	width="100%"
+		 	showIcons="true"
+			content="{/TimelineSet}"
+		 	filterList="{/TimelineSet}">
+				<commons:content>
+					<commons:TimelineItem 
+						id="idTimelineItem" 
+						dateTime="{CreateDate}"
+						userName="{Username}" 
+						title="{Title}" 
+						icon="{IconName}"
+						text="{Text}">
+					</commons:TimelineItem>
+				</commons:content>
+				
+				<commons:filterList>
+					<commons:TimelineFilterListItem 
+					id="idTimelineFilterListItem"
+					key="{Title}" 
+					text="{Title}">
+					</commons:TimelineFilterListItem>
+				</commons:filterList>
+		</commons:Timeline>
+</core:FragmentDefinition>

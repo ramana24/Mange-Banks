@@ -1,0 +1,1865 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "fin.cash.bankmaster.manage/Component.js",
+			"size": 5603,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Model.js",
+				"jquery.sap.global.js",
+				"sap/ui/core/UIComponent.js"
+			]
+		},
+		{
+			"name": "Component-h2-preload-dbg.js",
+			"module": "Component-h2-preload.js",
+			"size": 14774,
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/Address.controller.js",
+				"fin/cash/bankmaster/manage/controller/App.controller.js",
+				"fin/cash/bankmaster/manage/controller/Bank.controller.js",
+				"fin/cash/bankmaster/manage/controller/BankServiceMapping.controller.js",
+				"fin/cash/bankmaster/manage/controller/DefaultableBP.controller.js",
+				"fin/cash/bankmaster/manage/controller/HouseBank.controller.js",
+				"fin/cash/bankmaster/manage/controller/InternationalVersion.controller.js",
+				"fin/cash/bankmaster/manage/controller/ManageBanks.controller.js",
+				"fin/cash/bankmaster/manage/controller/ManageUsedUnits.controller.js",
+				"fin/cash/bankmaster/manage/controller/NotFound.controller.js",
+				"fin/cash/bankmaster/manage/controller/manageExistingBanks.controller.js",
+				"fin/cash/bankmaster/manage/fragment/addressSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Model.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Uploader.js",
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"jquery.sap.global.js",
+				"sap/f/DynamicPage.js",
+				"sap/f/DynamicPageHeader.js",
+				"sap/f/DynamicPageTitle.js",
+				"sap/fin/central/lib/library.js",
+				"sap/fin/central/lib/nav/NavigationHandler.js",
+				"sap/m/ActionSheet.js",
+				"sap/m/App.js",
+				"sap/m/Button.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/SearchField.js",
+				"sap/m/Select.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/m/semantic/SendEmailAction.js",
+				"sap/m/semantic/ShareInJamAction.js",
+				"sap/suite/ui/commons/Timeline.js",
+				"sap/suite/ui/commons/TimelineFilterListItem.js",
+				"sap/suite/ui/commons/TimelineItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/GroupConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/Layout.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/comp/smartvariants/SmartVariantManagement.js",
+				"sap/ui/comp/state/UIState.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js"
+			],
+			"included": [
+				"fin.cash.bankmaster.manage/Component.js",
+				"fin.cash.bankmaster.manage/controller/Address.controller.js",
+				"fin.cash.bankmaster.manage/controller/App.controller.js",
+				"fin.cash.bankmaster.manage/controller/Bank.controller.js",
+				"fin.cash.bankmaster.manage/controller/BankServiceMapping.controller.js",
+				"fin.cash.bankmaster.manage/controller/DefaultableBP.controller.js",
+				"fin.cash.bankmaster.manage/controller/HouseBank.controller.js",
+				"fin.cash.bankmaster.manage/controller/InternationalVersion.controller.js",
+				"fin.cash.bankmaster.manage/controller/ManageBanks.controller.js",
+				"fin.cash.bankmaster.manage/controller/ManageUsedUnits.controller.js",
+				"fin.cash.bankmaster.manage/controller/NotFound.controller.js",
+				"fin.cash.bankmaster.manage/controller/manageExistingBanks.controller.js",
+				"fin.cash.bankmaster.manage/fragment/addressSmartForm.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankSmartForm.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankTimeline.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankUploadCollection.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/shareActionSheet.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/i18n/i18n.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ar.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_bg.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ca.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_cs.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_da.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_de.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_el.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en_US_sappsd.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en_US_saptrc.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_es.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_et.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_fi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_fr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hu.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_it.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_iw.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ja.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_kk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ko.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_lt.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_lv.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ms.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_nl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_no.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_pl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_pt.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ro.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ru.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sh.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sv.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_th.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_tr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_uk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_vi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_zh_CN.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_zh_TW.properties",
+				"fin.cash.bankmaster.manage/manifest.json",
+				"fin.cash.bankmaster.manage/util/BaseController.js",
+				"fin.cash.bankmaster.manage/util/Creator.js",
+				"fin.cash.bankmaster.manage/util/Deleter.js",
+				"fin.cash.bankmaster.manage/util/ErrorHandler.js",
+				"fin.cash.bankmaster.manage/util/Formatter.js",
+				"fin.cash.bankmaster.manage/util/Layout.js",
+				"fin.cash.bankmaster.manage/util/Messager.js",
+				"fin.cash.bankmaster.manage/util/Model.js",
+				"fin.cash.bankmaster.manage/util/Navigator.js",
+				"fin.cash.bankmaster.manage/util/Updater.js",
+				"fin.cash.bankmaster.manage/util/Uploader.js",
+				"fin.cash.bankmaster.manage/util/Validator.js",
+				"fin.cash.bankmaster.manage/view/Address.view.xml",
+				"fin.cash.bankmaster.manage/view/App.view.xml",
+				"fin.cash.bankmaster.manage/view/Bank.view.xml",
+				"fin.cash.bankmaster.manage/view/BankServiceMapping.view.xml",
+				"fin.cash.bankmaster.manage/view/DefaultableBP.view.xml",
+				"fin.cash.bankmaster.manage/view/HouseBank.view.xml",
+				"fin.cash.bankmaster.manage/view/InternationalVersion.view.xml",
+				"fin.cash.bankmaster.manage/view/ManageBanks.view.xml",
+				"fin.cash.bankmaster.manage/view/ManageUsedUnits.view.xml",
+				"fin.cash.bankmaster.manage/view/NotFound.view.xml",
+				"fin.cash.bankmaster.manage/view/manageExistingBanks.view.xml"
+			]
+		},
+		{
+			"name": "Component-h2-preload.js",
+			"module": "Component-h2-preload.js",
+			"size": 14687,
+			"merged": true,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/Address.controller.js",
+				"fin/cash/bankmaster/manage/controller/App.controller.js",
+				"fin/cash/bankmaster/manage/controller/Bank.controller.js",
+				"fin/cash/bankmaster/manage/controller/BankServiceMapping.controller.js",
+				"fin/cash/bankmaster/manage/controller/DefaultableBP.controller.js",
+				"fin/cash/bankmaster/manage/controller/HouseBank.controller.js",
+				"fin/cash/bankmaster/manage/controller/InternationalVersion.controller.js",
+				"fin/cash/bankmaster/manage/controller/ManageBanks.controller.js",
+				"fin/cash/bankmaster/manage/controller/ManageUsedUnits.controller.js",
+				"fin/cash/bankmaster/manage/controller/NotFound.controller.js",
+				"fin/cash/bankmaster/manage/controller/manageExistingBanks.controller.js",
+				"fin/cash/bankmaster/manage/fragment/addressSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Model.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Uploader.js",
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"jquery.sap.global.js",
+				"sap/f/DynamicPage.js",
+				"sap/f/DynamicPageHeader.js",
+				"sap/f/DynamicPageTitle.js",
+				"sap/fin/central/lib/library.js",
+				"sap/fin/central/lib/nav/NavigationHandler.js",
+				"sap/m/ActionSheet.js",
+				"sap/m/App.js",
+				"sap/m/Button.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/SearchField.js",
+				"sap/m/Select.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/m/semantic/SendEmailAction.js",
+				"sap/m/semantic/ShareInJamAction.js",
+				"sap/suite/ui/commons/Timeline.js",
+				"sap/suite/ui/commons/TimelineFilterListItem.js",
+				"sap/suite/ui/commons/TimelineItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/GroupConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/Layout.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/comp/smartvariants/SmartVariantManagement.js",
+				"sap/ui/comp/state/UIState.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js"
+			],
+			"included": [
+				"fin.cash.bankmaster.manage/Component.js",
+				"fin.cash.bankmaster.manage/controller/Address.controller.js",
+				"fin.cash.bankmaster.manage/controller/App.controller.js",
+				"fin.cash.bankmaster.manage/controller/Bank.controller.js",
+				"fin.cash.bankmaster.manage/controller/BankServiceMapping.controller.js",
+				"fin.cash.bankmaster.manage/controller/DefaultableBP.controller.js",
+				"fin.cash.bankmaster.manage/controller/HouseBank.controller.js",
+				"fin.cash.bankmaster.manage/controller/InternationalVersion.controller.js",
+				"fin.cash.bankmaster.manage/controller/ManageBanks.controller.js",
+				"fin.cash.bankmaster.manage/controller/ManageUsedUnits.controller.js",
+				"fin.cash.bankmaster.manage/controller/NotFound.controller.js",
+				"fin.cash.bankmaster.manage/controller/manageExistingBanks.controller.js",
+				"fin.cash.bankmaster.manage/fragment/addressSmartForm.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankSmartForm.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankTimeline.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankUploadCollection.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/shareActionSheet.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/i18n/i18n.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ar.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_bg.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ca.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_cs.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_da.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_de.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_el.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en_US_sappsd.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en_US_saptrc.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_es.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_et.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_fi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_fr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hu.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_it.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_iw.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ja.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_kk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ko.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_lt.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_lv.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ms.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_nl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_no.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_pl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_pt.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ro.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ru.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sh.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sv.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_th.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_tr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_uk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_vi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_zh_CN.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_zh_TW.properties",
+				"fin.cash.bankmaster.manage/manifest.json",
+				"fin.cash.bankmaster.manage/util/BaseController.js",
+				"fin.cash.bankmaster.manage/util/Creator.js",
+				"fin.cash.bankmaster.manage/util/Deleter.js",
+				"fin.cash.bankmaster.manage/util/ErrorHandler.js",
+				"fin.cash.bankmaster.manage/util/Formatter.js",
+				"fin.cash.bankmaster.manage/util/Layout.js",
+				"fin.cash.bankmaster.manage/util/Messager.js",
+				"fin.cash.bankmaster.manage/util/Model.js",
+				"fin.cash.bankmaster.manage/util/Navigator.js",
+				"fin.cash.bankmaster.manage/util/Updater.js",
+				"fin.cash.bankmaster.manage/util/Uploader.js",
+				"fin.cash.bankmaster.manage/util/Validator.js",
+				"fin.cash.bankmaster.manage/view/Address.view.xml",
+				"fin.cash.bankmaster.manage/view/App.view.xml",
+				"fin.cash.bankmaster.manage/view/Bank.view.xml",
+				"fin.cash.bankmaster.manage/view/BankServiceMapping.view.xml",
+				"fin.cash.bankmaster.manage/view/DefaultableBP.view.xml",
+				"fin.cash.bankmaster.manage/view/HouseBank.view.xml",
+				"fin.cash.bankmaster.manage/view/InternationalVersion.view.xml",
+				"fin.cash.bankmaster.manage/view/ManageBanks.view.xml",
+				"fin.cash.bankmaster.manage/view/ManageUsedUnits.view.xml",
+				"fin.cash.bankmaster.manage/view/NotFound.view.xml",
+				"fin.cash.bankmaster.manage/view/manageExistingBanks.view.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "Component-preload.js",
+			"size": 1067367,
+			"merged": true,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/Address.controller.js",
+				"fin/cash/bankmaster/manage/controller/App.controller.js",
+				"fin/cash/bankmaster/manage/controller/Bank.controller.js",
+				"fin/cash/bankmaster/manage/controller/BankServiceMapping.controller.js",
+				"fin/cash/bankmaster/manage/controller/DefaultableBP.controller.js",
+				"fin/cash/bankmaster/manage/controller/HouseBank.controller.js",
+				"fin/cash/bankmaster/manage/controller/InternationalVersion.controller.js",
+				"fin/cash/bankmaster/manage/controller/ManageBanks.controller.js",
+				"fin/cash/bankmaster/manage/controller/ManageUsedUnits.controller.js",
+				"fin/cash/bankmaster/manage/controller/NotFound.controller.js",
+				"fin/cash/bankmaster/manage/controller/manageExistingBanks.controller.js",
+				"fin/cash/bankmaster/manage/fragment/addressSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Model.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Uploader.js",
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"jquery.sap.global.js",
+				"sap/f/DynamicPage.js",
+				"sap/f/DynamicPageHeader.js",
+				"sap/f/DynamicPageTitle.js",
+				"sap/fin/central/lib/library.js",
+				"sap/fin/central/lib/nav/NavigationHandler.js",
+				"sap/m/ActionSheet.js",
+				"sap/m/App.js",
+				"sap/m/Button.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessagePage.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/SearchField.js",
+				"sap/m/Select.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/m/semantic/SendEmailAction.js",
+				"sap/m/semantic/ShareInJamAction.js",
+				"sap/suite/ui/commons/Timeline.js",
+				"sap/suite/ui/commons/TimelineFilterListItem.js",
+				"sap/suite/ui/commons/TimelineItem.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/GroupConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/Layout.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/comp/smartvariants/SmartVariantManagement.js",
+				"sap/ui/comp/state/UIState.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/routing/History.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js"
+			],
+			"included": [
+				"fin.cash.bankmaster.manage/Component.js",
+				"fin.cash.bankmaster.manage/controller/Address.controller.js",
+				"fin.cash.bankmaster.manage/controller/App.controller.js",
+				"fin.cash.bankmaster.manage/controller/Bank.controller.js",
+				"fin.cash.bankmaster.manage/controller/BankServiceMapping.controller.js",
+				"fin.cash.bankmaster.manage/controller/DefaultableBP.controller.js",
+				"fin.cash.bankmaster.manage/controller/HouseBank.controller.js",
+				"fin.cash.bankmaster.manage/controller/InternationalVersion.controller.js",
+				"fin.cash.bankmaster.manage/controller/ManageBanks.controller.js",
+				"fin.cash.bankmaster.manage/controller/ManageUsedUnits.controller.js",
+				"fin.cash.bankmaster.manage/controller/NotFound.controller.js",
+				"fin.cash.bankmaster.manage/controller/manageExistingBanks.controller.js",
+				"fin.cash.bankmaster.manage/fragment/addressSmartForm.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankSmartForm.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankTimeline.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/bankUploadCollection.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/shareActionSheet.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"fin.cash.bankmaster.manage/i18n/i18n.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ar.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_bg.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ca.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_cs.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_da.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_de.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_el.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en_US_sappsd.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_en_US_saptrc.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_es.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_et.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_fi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_fr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_hu.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_it.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_iw.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ja.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_kk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ko.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_lt.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_lv.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ms.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_nl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_no.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_pl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_pt.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ro.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_ru.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sh.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sl.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_sv.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_th.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_tr.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_uk.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_vi.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_zh_CN.properties",
+				"fin.cash.bankmaster.manage/i18n/i18n_zh_TW.properties",
+				"fin.cash.bankmaster.manage/manifest.json",
+				"fin.cash.bankmaster.manage/util/BaseController.js",
+				"fin.cash.bankmaster.manage/util/Creator.js",
+				"fin.cash.bankmaster.manage/util/Deleter.js",
+				"fin.cash.bankmaster.manage/util/ErrorHandler.js",
+				"fin.cash.bankmaster.manage/util/Formatter.js",
+				"fin.cash.bankmaster.manage/util/Layout.js",
+				"fin.cash.bankmaster.manage/util/Messager.js",
+				"fin.cash.bankmaster.manage/util/Model.js",
+				"fin.cash.bankmaster.manage/util/Navigator.js",
+				"fin.cash.bankmaster.manage/util/Updater.js",
+				"fin.cash.bankmaster.manage/util/Uploader.js",
+				"fin.cash.bankmaster.manage/util/Validator.js",
+				"fin.cash.bankmaster.manage/view/Address.view.xml",
+				"fin.cash.bankmaster.manage/view/App.view.xml",
+				"fin.cash.bankmaster.manage/view/Bank.view.xml",
+				"fin.cash.bankmaster.manage/view/BankServiceMapping.view.xml",
+				"fin.cash.bankmaster.manage/view/DefaultableBP.view.xml",
+				"fin.cash.bankmaster.manage/view/HouseBank.view.xml",
+				"fin.cash.bankmaster.manage/view/InternationalVersion.view.xml",
+				"fin.cash.bankmaster.manage/view/ManageBanks.view.xml",
+				"fin.cash.bankmaster.manage/view/ManageUsedUnits.view.xml",
+				"fin.cash.bankmaster.manage/view/NotFound.view.xml",
+				"fin.cash.bankmaster.manage/view/manageExistingBanks.view.xml"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "fin.cash.bankmaster.manage/Component.js",
+			"size": 2574,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Model.js",
+				"jquery.sap.global.js",
+				"sap/ui/core/UIComponent.js"
+			]
+		},
+		{
+			"name": "controller/Address-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/Address.controller.js",
+			"size": 13787,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/Address.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/Address.controller.js",
+			"size": 9427,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/App-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/App.controller.js",
+			"size": 834,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/App.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/App.controller.js",
+			"size": 544,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/Bank-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/Bank.controller.js",
+			"size": 34089,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"sap/fin/central/lib/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/Bank.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/Bank.controller.js",
+			"size": 23276,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Deleter.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"sap/fin/central/lib/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/BankServiceMapping-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/BankServiceMapping.controller.js",
+			"size": 6668,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/BankServiceMapping.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/BankServiceMapping.controller.js",
+			"size": 5145,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/DefaultableBP-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/DefaultableBP.controller.js",
+			"size": 6917,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/DefaultableBP.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/DefaultableBP.controller.js",
+			"size": 5292,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/HouseBank-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/HouseBank.controller.js",
+			"size": 9169,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/HouseBank.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/HouseBank.controller.js",
+			"size": 6637,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/InternationalVersion-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/InternationalVersion.controller.js",
+			"size": 8783,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/InternationalVersion.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/InternationalVersion.controller.js",
+			"size": 5824,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Creator.js",
+				"fin/cash/bankmaster/manage/util/Layout.js",
+				"fin/cash/bankmaster/manage/util/Messager.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"fin/cash/bankmaster/manage/util/Updater.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "controller/ManageBanks-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/ManageBanks.controller.js",
+			"size": 15040,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"sap/ui/comp/state/UIState.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js"
+			]
+		},
+		{
+			"name": "controller/ManageBanks.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/ManageBanks.controller.js",
+			"size": 10097,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js",
+				"sap/ui/comp/state/UIState.js",
+				"sap/ui/generic/app/navigation/service/NavigationHandler.js",
+				"sap/ui/generic/app/navigation/service/SelectionVariant.js"
+			]
+		},
+		{
+			"name": "controller/ManageUsedUnits-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/ManageUsedUnits.controller.js",
+			"size": 4557,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "controller/ManageUsedUnits.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/ManageUsedUnits.controller.js",
+			"size": 3365,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "controller/NotFound-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/NotFound.controller.js",
+			"size": 446,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "controller/NotFound.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/NotFound.controller.js",
+			"size": 346,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "controller/manageExistingBanks-dbg.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/manageExistingBanks.controller.js",
+			"size": 5091,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "controller/manageExistingBanks.controller.js",
+			"module": "fin.cash.bankmaster.manage/controller/manageExistingBanks.controller.js",
+			"size": 3340,
+			"required": [
+				"fin/cash/bankmaster/manage/util/BaseController.js",
+				"fin/cash/bankmaster/manage/util/Formatter.js",
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "fragment/addressSmartForm.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/addressSmartForm.fragment.xml",
+			"size": 11963,
+			"required": [
+				"sap/m/OverflowToolbar.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/Layout.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/GridData.js"
+			]
+		},
+		{
+			"name": "fragment/bankServiceMappingSmartTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+			"size": 1839,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/bankSmartForm.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/bankSmartForm.fragment.xml",
+			"size": 5357,
+			"required": [
+				"sap/m/Link.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/bankTimeline.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/bankTimeline.fragment.xml",
+			"size": 1014,
+			"required": [
+				"sap/suite/ui/commons/Timeline.js",
+				"sap/suite/ui/commons/TimelineFilterListItem.js",
+				"sap/suite/ui/commons/TimelineItem.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/bankUploadCollection.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/bankUploadCollection.fragment.xml",
+			"size": 1101,
+			"required": [
+				"sap/m/ObjectAttribute.js",
+				"sap/m/UploadCollection.js",
+				"sap/m/UploadCollectionItem.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/contactSmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/contactSmartResponsiveTable.fragment.xml",
+			"size": 1719,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/defaultableBPSmartTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/defaultableBPSmartTable.fragment.xml",
+			"size": 1870,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/existingBanksSmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+			"size": 1893,
+			"required": [
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/SearchField.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/Grid.js"
+			]
+		},
+		{
+			"name": "fragment/historySmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/historySmartResponsiveTable.fragment.xml",
+			"size": 1304,
+			"required": [
+				"sap/m/Table.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/houseBankSmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+			"size": 1911,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+			"size": 1524,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+			"size": 2932,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/Label.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/Grid.js"
+			]
+		},
+		{
+			"name": "fragment/shareActionSheet.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/shareActionSheet.fragment.xml",
+			"size": 843,
+			"required": [
+				"sap/m/ActionSheet.js",
+				"sap/m/Button.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js"
+			]
+		},
+		{
+			"name": "fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+			"size": 1476,
+			"required": [
+				"sap/m/ColumnListItem.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "fragment/usedCompanySmartResponsiveTable.fragment.xml",
+			"module": "fin.cash.bankmaster.manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+			"size": 1304,
+			"required": [
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n.properties",
+			"size": 15312,
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ar.properties",
+			"size": 35305,
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_bg.properties",
+			"size": 43891,
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ca.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ca.properties",
+			"size": 16646,
+			"locale": "ca",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_cs.properties",
+			"size": 18088,
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_da.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_da.properties",
+			"size": 15369,
+			"locale": "da",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_de.properties",
+			"size": 16710,
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_el.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_el.properties",
+			"size": 43118,
+			"locale": "el",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_en.properties",
+			"size": 15125,
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_en_US_sappsd.properties",
+			"size": 48380,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_en_US_saptrc.properties",
+			"size": 19934,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_es.properties",
+			"size": 16983,
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_et.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_et.properties",
+			"size": 16262,
+			"locale": "et",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fi.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_fi.properties",
+			"size": 16732,
+			"locale": "fi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_fr.properties",
+			"size": 17805,
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hi.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_hi.properties",
+			"size": 37869,
+			"locale": "hi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_hr.properties",
+			"size": 16342,
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_hu.properties",
+			"size": 19646,
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_it.properties",
+			"size": 15838,
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_iw.properties",
+			"size": 30579,
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ja.properties",
+			"size": 23906,
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_kk.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_kk.properties",
+			"size": 41651,
+			"locale": "kk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ko.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ko.properties",
+			"size": 22782,
+			"locale": "ko",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lt.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_lt.properties",
+			"size": 17251,
+			"locale": "lt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_lv.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_lv.properties",
+			"size": 18175,
+			"locale": "lv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ms.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ms.properties",
+			"size": 15556,
+			"locale": "ms",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_nl.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_nl.properties",
+			"size": 15530,
+			"locale": "nl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_no.properties",
+			"size": 15619,
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_pl.properties",
+			"size": 17608,
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_pt.properties",
+			"size": 16958,
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ro.properties",
+			"size": 17501,
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_ru.properties",
+			"size": 41058,
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_sh.properties",
+			"size": 16442,
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_sk.properties",
+			"size": 18213,
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_sl.properties",
+			"size": 16406,
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sv.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_sv.properties",
+			"size": 15688,
+			"locale": "sv",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_th.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_th.properties",
+			"size": 40762,
+			"locale": "th",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_tr.properties",
+			"size": 17170,
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_uk.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_uk.properties",
+			"size": 42359,
+			"locale": "uk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_vi.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_vi.properties",
+			"size": 24578,
+			"locale": "vi",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_zh_CN.properties",
+			"size": 19309,
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_TW.properties",
+			"module": "fin.cash.bankmaster.manage/i18n/i18n_zh_TW.properties",
+			"size": 19657,
+			"locale": "zh_TW",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "localService/metadata.xml",
+			"size": 125731
+		},
+		{
+			"name": "localService/mockserver-dbg.js",
+			"size": 1430,
+			"isDebug": true
+		},
+		{
+			"name": "localService/mockserver.js",
+			"size": 776
+		},
+		{
+			"name": "manifest.json",
+			"module": "fin.cash.bankmaster.manage/manifest.json",
+			"size": 6027
+		},
+		{
+			"name": "model/metadata.xml",
+			"size": 60536
+		},
+		{
+			"name": "resources.json",
+			"size": 45945
+		},
+		{
+			"name": "util/BaseController-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/BaseController.js",
+			"size": 5630,
+			"isDebug": true,
+			"required": [
+				"sap/fin/central/lib/nav/NavigationHandler.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "util/BaseController.js",
+			"module": "fin.cash.bankmaster.manage/util/BaseController.js",
+			"size": 2881,
+			"required": [
+				"sap/fin/central/lib/nav/NavigationHandler.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "util/Creator-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Creator.js",
+			"size": 1623,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"sap/m/MessageBox.js"
+			]
+		},
+		{
+			"name": "util/Creator.js",
+			"module": "fin.cash.bankmaster.manage/util/Creator.js",
+			"size": 1040,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Validator.js",
+				"sap/m/MessageBox.js"
+			]
+		},
+		{
+			"name": "util/Deleter-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Deleter.js",
+			"size": 1156,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "util/Deleter.js",
+			"module": "fin.cash.bankmaster.manage/util/Deleter.js",
+			"size": 696,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "util/ErrorHandler-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/ErrorHandler.js",
+			"size": 4399,
+			"isDebug": true,
+			"required": [
+				"sap/m/MessageBox.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "util/ErrorHandler.js",
+			"module": "fin.cash.bankmaster.manage/util/ErrorHandler.js",
+			"size": 2108,
+			"required": [
+				"sap/m/MessageBox.js",
+				"sap/ui/Device.js",
+				"sap/ui/base/Object.js"
+			]
+		},
+		{
+			"name": "util/Formatter-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Formatter.js",
+			"size": 1572,
+			"isDebug": true,
+			"required": [
+				"sap/m/Label.js"
+			]
+		},
+		{
+			"name": "util/Formatter.js",
+			"module": "fin.cash.bankmaster.manage/util/Formatter.js",
+			"size": 640,
+			"required": [
+				"sap/m/Label.js"
+			]
+		},
+		{
+			"name": "util/Layout-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Layout.js",
+			"size": 909,
+			"isDebug": true
+		},
+		{
+			"name": "util/Layout.js",
+			"module": "fin.cash.bankmaster.manage/util/Layout.js",
+			"size": 756
+		},
+		{
+			"name": "util/Messager-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Messager.js",
+			"size": 1943,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "util/Messager.js",
+			"module": "fin.cash.bankmaster.manage/util/Messager.js",
+			"size": 1374,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Navigator.js"
+			]
+		},
+		{
+			"name": "util/Model-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Model.js",
+			"size": 384,
+			"isDebug": true,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/Model.js",
+			"module": "fin.cash.bankmaster.manage/util/Model.js",
+			"size": 281,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/Navigator-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Navigator.js",
+			"size": 1680,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/routing/History.js"
+			]
+		},
+		{
+			"name": "util/Navigator.js",
+			"module": "fin.cash.bankmaster.manage/util/Navigator.js",
+			"size": 715,
+			"required": [
+				"sap/ui/core/routing/HashChanger.js",
+				"sap/ui/core/routing/History.js"
+			]
+		},
+		{
+			"name": "util/Updater-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Updater.js",
+			"size": 1847,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "util/Updater.js",
+			"module": "fin.cash.bankmaster.manage/util/Updater.js",
+			"size": 1105,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "util/Uploader-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Uploader.js",
+			"size": 1240,
+			"isDebug": true,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Uploader.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "util/Uploader.js",
+			"module": "fin.cash.bankmaster.manage/util/Uploader.js",
+			"size": 768,
+			"required": [
+				"fin/cash/bankmaster/manage/util/Uploader.js",
+				"fin/cash/bankmaster/manage/util/Validator.js"
+			]
+		},
+		{
+			"name": "util/Validator-dbg.js",
+			"module": "fin.cash.bankmaster.manage/util/Validator.js",
+			"size": 5108,
+			"isDebug": true
+		},
+		{
+			"name": "util/Validator.js",
+			"module": "fin.cash.bankmaster.manage/util/Validator.js",
+			"size": 3018
+		},
+		{
+			"name": "version.json",
+			"size": 296
+		},
+		{
+			"name": "view/Address.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/Address.view.xml",
+			"size": 3620,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/Address.controller.js",
+				"fin/cash/bankmaster/manage/fragment/addressSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/internationalVersionSmartResponsiveTable.fragment.xml",
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/App.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/App.view.xml",
+			"size": 371,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/App.controller.js",
+				"sap/m/App.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/Bank.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/Bank.view.xml",
+			"size": 8049,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/Bank.controller.js",
+				"fin/cash/bankmaster/manage/fragment/bankServiceMappingSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/bankSmartForm.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/contactSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/defaultableBPSmartTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/historySmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/houseBankSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/relatedBranchSmartResponsiveTable.fragment.xml",
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Title.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/BankServiceMapping.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/BankServiceMapping.view.xml",
+			"size": 5218,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/BankServiceMapping.controller.js",
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/DefaultableBP.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/DefaultableBP.view.xml",
+			"size": 4993,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/DefaultableBP.controller.js",
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/HouseBank.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/HouseBank.view.xml",
+			"size": 9348,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/HouseBank.controller.js",
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Title.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/ColumnLayout.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/InternationalVersion.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/InternationalVersion.view.xml",
+			"size": 3173,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/InternationalVersion.controller.js",
+				"fin/cash/bankmaster/manage/fragment/addressSmartForm.fragment.xml",
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/ManageBanks.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/ManageBanks.view.xml",
+			"size": 18772,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/ManageBanks.controller.js",
+				"sap/f/DynamicPage.js",
+				"sap/f/DynamicPageHeader.js",
+				"sap/f/DynamicPageTitle.js",
+				"sap/m/Button.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/SearchField.js",
+				"sap/m/Select.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/navpopover/SemanticObjectController.js",
+				"sap/ui/comp/navpopover/SmartLink.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/GroupConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/comp/smartvariants/SmartVariantManagement.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/ManageUsedUnits.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/ManageUsedUnits.view.xml",
+			"size": 1843,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/ManageUsedUnits.controller.js",
+				"fin/cash/bankmaster/manage/fragment/usedBusinessPartnerSmartResponsiveTable.fragment.xml",
+				"fin/cash/bankmaster/manage/fragment/usedCompanySmartResponsiveTable.fragment.xml",
+				"sap/m/Button.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/NotFound.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/NotFound.view.xml",
+			"size": 537,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/NotFound.controller.js",
+				"sap/m/Link.js",
+				"sap/m/MessagePage.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/manageExistingBanks.view.xml",
+			"module": "fin.cash.bankmaster.manage/view/manageExistingBanks.view.xml",
+			"size": 1817,
+			"required": [
+				"fin/cash/bankmaster/manage/controller/manageExistingBanks.controller.js",
+				"fin/cash/bankmaster/manage/fragment/existingBanksSmartResponsiveTable.fragment.xml",
+				"sap/m/Button.js",
+				"sap/m/Label.js",
+				"sap/m/semantic/FullscreenPage.js",
+				"sap/m/semantic/SendEmailAction.js",
+				"sap/m/semantic/ShareInJamAction.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js"
+			]
+		}
+	]
+}

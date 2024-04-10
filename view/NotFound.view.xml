@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View
+	controllerName="fin.cash.bankmaster.manage.controller.NotFound"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<MessagePage
+		title="{i18n>FULLSCREEN_TITLE}"
+		text="{i18n>NOT_FOUND_TEXT}"
+		description=""
+		icon="{sap-icon://document}"
+		id="fin.cash.bankmaster.manage.notFoundPage">
+			<customDescription>
+				<Link id="link" text="{i18n>FULLSCREEN_TITLE}" press="onBackNav" />
+			</customDescription>
+	</MessagePage>
+</mvc:View>

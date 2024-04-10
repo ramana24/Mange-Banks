@@ -1,0 +1,15 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<ActionSheet id="shareSheet" placement="VerticalPreferedBottom">
+		<buttons>
+			<Button id="shareEmailButton"  icon="sap-icon://email" press="onShareEmailPress" text="{i18n>SEND_EMAIL}" />
+			<Button id="shareJamButton"  icon="sap-icon://share-2" press="onShareInJamPress" text="{i18n>SHARE_IN_JAM}" visible="{share>/jamVisible}" />
+			<footerbar:AddBookmarkButton id="bookmarkButton"  text="{share>/bookmarkButtonText}" title="{share>/bookmarkTitle}" 
+				subtitle="{share>/bookmarkSubtitle}" tileIcon="{share>/bookmarkIcon}" customUrl="{share>/bookmarkCustomUrl}" />
+		</buttons>
+	</ActionSheet>	
+</core:FragmentDefinition>

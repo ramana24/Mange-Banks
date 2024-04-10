@@ -1,0 +1,20 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<smarttable:SmartTable tableType="ResponsiveTable" entitySet="ChangeDocumentSet" enableAutoBinding="false" demandPopin="true"
+		id="fin.cash.bankmaster.historySmartResponsiveTable" header="{i18n>HISTORY_SMART_RESPONSIVE_TABLE_HEADER}" showRowCount="true"
+		useVariantManagement="true" beforeRebindTable="onBeforeRebindHistoryTable" ignoredFields="Udate,Utime"
+		persistencyKey="fin.cash.bankmaster.historyPersisKey" placeToolbarInTable="true">
+		<smarttable:customData>
+			<core:CustomData id="_IDEGen_customdata0" key="dateFormatSettings" value='\{"UTC":true,"style":"short"\}'/>
+		</smarttable:customData>
+		<smarttable:semanticObjectController>
+			<smartlink:SemanticObjectController id="HistoryTableSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+		</smarttable:semanticObjectController>
+		<Table growing="true" growingThreshold="5" id="onHistoryTableMode" sticky="ColumnHeaders,HeaderToolbar"></Table>
+	</smarttable:SmartTable>
+</core:FragmentDefinition>

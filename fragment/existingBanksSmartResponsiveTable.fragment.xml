@@ -1,0 +1,32 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<layout:Grid id="_IDEGen_grid0" defaultSpan="L12 M12 S12" hSpacing="0" vSpacing="3" width="auto">
+		<layout:content>
+			<smarttable:SmartTable tableType="ResponsiveTable" entitySet="BankSet" enableAutoBinding="true"
+				id="fin.cash.bankmaster.manage.bankSmartResponsiveTable" class="bankSmartResponsiveTable" header="{i18n>BANK_SMART_RESPONSIVE_TABLE_HEADER}"
+				showRowCount="true" useVariantManagement="true" beforeRebindTable="onBeforeRebindExistingBanksTable"
+				persistencyKey="fin.cash.bankmaster.manage.existingbankperskey" placeToolbarInTable="true"
+				ignoreFromPersonalisation="IsMarkedAsDeleted,BankName,CountryName,RatingText,BpNumberName,RegionName" demandPopin="true">
+				<smarttable:customToolbar>
+					<OverflowToolbar id="_IDEGen_overflowtoolbar0">
+						<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+						<SearchField id="_IDEGen_searchfield0" search="onSearchButtonPressed">
+							<layoutData>
+								<OverflowToolbarLayoutData id="_IDEGen_overflowtoolbarlayoutdata0" maxWidth="18%"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</smarttable:customToolbar>
+				<smarttable:semanticObjectController>
+					<smartlink:SemanticObjectController id="existingBanksTableSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+				</smarttable:semanticObjectController>
+				<Table id="_IDEGen_table0" mode="MultiSelect" growing="true" growingThreshold="20" sticky="ColumnHeaders,HeaderToolbar" fixedLayout="false"></Table>
+			</smarttable:SmartTable>
+		</layout:content>
+	</layout:Grid>
+</core:FragmentDefinition>

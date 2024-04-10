@@ -1,0 +1,25 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<smarttable:SmartTable id="fin.cash.bankmaster.manage.usedUnitSmartResponsiveTable" tableType="ResponsiveTable" entitySet="UsedBpSet"
+		enableAutoBinding="false" header="{i18n>USED_BUSINESS_PARTNER_SMART_RESPONSIVE_TABLE_HEADER}" showRowCount="true"
+		useVariantManagement="true" persistencyKey="fin.cash.bankmaster.manage.UsedBPPersisKey" initialise="onUsedUnitSmartTableInitialized"
+		beforeRebindTable="onBeforeRebindUsedBusinessPartnerTable" placeToolbarInTable="true" demandPopin="true">
+		<smarttable:customToolbar>
+			<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent"></OverflowToolbar>
+		</smarttable:customToolbar>
+		<smarttable:semanticObjectController>
+			<smartlink:SemanticObjectController id="usedBPTableSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+		</smarttable:semanticObjectController>
+		<Table id="_IDEGen_table0" sticky="ColumnHeaders,HeaderToolbar">
+			<columns></columns>
+			<items>
+				<ColumnListItem id="_IDEGen_columnlistitem0" type="Navigation" press="onUsedBusinessPartnerListItemPressed"></ColumnListItem>
+			</items>
+		</Table>
+	</smarttable:SmartTable>
+</core:FragmentDefinition>

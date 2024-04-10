@@ -1,0 +1,32 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<smarttable:SmartTable id="fin.cash.bankmaster.manage.defaultableBPsmarttable" tableType="ResponsiveTable" entitySet="DefaultableBPSet"
+		enableAutoBinding="false" header="{i18n>DEFAULTABLEBP_OBJECTPAGESECTION_TEXT}" showRowCount="true" useVariantManagement="true"
+		demandPopin="true" persistencyKey="fin.cash.bankmaster.manage.defaultableBPPersistencyKey"
+		ignoreFromPersonalisation="BusinessPartnerName,BankName,CountryName,LastChangedByUserFullName,CreatedByUserFullName"
+		beforeRebindTable="onBeforeRebindDefaultableBPTable">
+		<smarttable:customData>
+			<core:CustomData id="DEFAULTABLEBP_IDEGen_customdata0" key="dateFormatSettings" value='\{"UTC":true,"style":"short"\}'/>
+		</smarttable:customData>
+		<smarttable:customToolbar>
+			<OverflowToolbar id="DEFAULTABLEBP_IDEGen_overflowtoolbar0" design="Transparent">
+				<ToolbarSpacer id="DEFAULTABLEBP_IDEGen_toolbarspacer0"/>
+				<Button text="{i18n>ADD}" id="addDefaultableBPIcon" press="onAddDefaulttableBPIconPressed" enabled="{= ${viewMode>/mode} === 'edit'}"/>
+			</OverflowToolbar>
+		</smarttable:customToolbar>
+		<smarttable:semanticObjectController>
+			<smartlink:SemanticObjectController id="DefaultBPTableSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+		</smarttable:semanticObjectController>
+		<Table id="defaultableBPTable">
+			<columns></columns>
+			<items>
+				<ColumnListItem id="DefaultableBpListItem" type="Navigation" press="onDefaultableBPItemPressed"></ColumnListItem>
+			</items>
+		</Table>
+	</smarttable:SmartTable>
+</core:FragmentDefinition>

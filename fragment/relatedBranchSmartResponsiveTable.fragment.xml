@@ -1,0 +1,50 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<layout:Grid id="_IDEGen_grid0" defaultSpan="L12 M12 S12" hSpacing="0" vSpacing="3" width="auto">
+		<layout:content>
+			<smarttable:SmartTable tableType="ResponsiveTable" entitySet="RelatedBranchesSet" demandPopin="true"
+				header="{i18n>RELATED_BRANCH_SMART_RESPONSIVE_TABLE_HEADER}" enableAutoBinding="false"
+				id="fin.cash.bankmaster.manage.RelatedBranchesSmartResponsiveTable" showRowCount="true" useVariantManagement="true"
+				persistencyKey="fin.cash.bankmaster.manage.branchPersisKey" beforeRebindTable="onBeforeRebindRelatedBranchesTable"
+				placeToolbarInTable="true" ignoreFromPersonalisation="BankName,CountryName,RelatedBankName,RelatedCountryName,BusinessPartnerFullname">
+				<smarttable:customToolbar>
+					<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent">
+						<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+						<Button text="{i18n>ADD}" press="onAddExsitingBanksPressed" id="addRelatedBranchIcon"
+							enabled="{= ${BpNumber} !== '' &amp;&amp; ${viewMode>/mode} === 'edit' }"/>
+						<Button text="{i18n>DELETE_BUTTON}" press="onDeleteExsitingBanksPressed" id="deleteRelatedBranchIcon"
+							enabled="{= ${viewMode>/mode} === 'edit'}"/>
+					</OverflowToolbar>
+				</smarttable:customToolbar>
+				<smarttable:semanticObjectController>
+					<smartlink:SemanticObjectController id="relatedBranchTableSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+				</smarttable:semanticObjectController>
+				<Table id="onRelatedBranchesTableMode" sticky="ColumnHeaders,HeaderToolbar" mode="{= ${viewMode>/mode} === 'edit' ? 'MultiSelect' : 'None'}">
+					<columns>
+						<Column id="_IDEGen_column1">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata1" key="p13nData"
+									value='\{"columnKey": "RelatedBankInternalId", "leadingProperty": "RelatedBankInternalId", "sortProperty": "RelatedBankInternalId", "filterProperty": "RelatedBankInternalId","additionalProperty":"RelatedBankName"}'/>
+							</customData>
+							<Label id="_IDEGen_label1" text="{i18n>RELATED_BRANCH_SMART_RESPONSIVE_TABLE_BANK_KEY}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem id="_IDEGen_columnlistitem0">
+							<cells>
+								<smartlink:SmartLink id="RelatedBankSmartLink"
+									text="{parts:['RelatedBankInternalId','RelatedBankName'],formatter:'.formatter.formatKeyAndDescription'}" semanticObject="Bank"
+									beforePopoverOpens="onBeforeRelatedBankKeyPopoverOpen"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</smarttable:SmartTable>
+		</layout:content>
+	</layout:Grid>
+</core:FragmentDefinition>

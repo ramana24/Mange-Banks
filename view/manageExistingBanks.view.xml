@@ -1,0 +1,46 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:ushell="sap.ushell.ui"
+	controllerName="fin.cash.bankmaster.manage.controller.manageExistingBanks">
+
+	<semantic:FullscreenPage id="_IDEGen_fullscreenpage0"
+			title="{i18n>SELECT_EXISTING_BANKS_SCREEN_TITLE}"
+			showNavButton="true"
+			navButtonPress="onCancelButtonPressed">
+
+		<semantic:content>
+			<layout:Grid id="_IDEGen_grid0" defaultSpan="L12 M12 S12" hSpacing="2rem" vSpacing="2rem" width="auto">
+				<layout:content>
+					<Label id="_IDEGen_label0" />
+					<core:Fragment id="_IDEGen_fragment0" fragmentName="fin.cash.bankmaster.manage/fragment/existingBanksSmartResponsiveTable" type="XML" />
+				</layout:content>	
+			</layout:Grid>
+		</semantic:content>
+		
+		<semantic:customFooterContent>
+			<Button id="fin.cash.bankmaster.manage.saveButton" press="onSaveButtonPressed" text="{i18n>SAVE_BUTTON}" tooltip="{i18n>SAVE_TOOLTIP}" type="Emphasized" />
+			<Button id="fin.cash.bankmaster.manage.cancelButton" press="onCancelButtonPressed" text="{i18n>CANCEL_BUTTON}" tooltip="{i18n>CANCEL_TOOLTIP}" />
+		</semantic:customFooterContent>
+		
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="_IDEGen_sendemailaction0" press="onShareEmailPress" />
+		</semantic:sendEmailAction>
+		
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="_IDEGen_shareinjamaction0" visible="{share>/isShareInJamActive}" press="onShareInJamPress" />
+		</semantic:shareInJamAction>
+		
+		<semantic:saveAsTileAction>
+			<ushell:footerbar.AddBookmarkButton title="{share>/bookmarkTitle}" tileIcon="{share>/bookmarkIcon}" />
+		</semantic:saveAsTileAction>
+		
+	</semantic:FullscreenPage>
+</core:View>

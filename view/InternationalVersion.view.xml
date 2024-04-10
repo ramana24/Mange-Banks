@@ -1,0 +1,44 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View xmlns="sap.uxap" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.m.semantic"
+	xmlns:ushell="sap.ushell.ui" controllerName="fin.cash.bankmaster.manage.controller.InternationalVersion">
+	<ObjectPageLayout id="InternationalAddressViewObjectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle id="InternationalAddressViewDynamicHeader">
+				<heading></heading>
+				<actions>
+					<m:Button id="fin.cash.bankmaster.manage.editButton" press="onEditButtonPressed" text="{i18n>EDIT_BUTTON}" tooltip="{i18n>EDIT_TOOLTIP}"
+						type="Emphasized"/>
+					<m:Button id="fin.cash.bankmaster.manage.share" icon="sap-icon://action" tooltip="{i18n>SHARE_BUTTON}" type="Transparent"
+						press="onShareButtonPressed"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<sections>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.InternationaladdressSmartFormSection" title="{i18n>ADVANCED_ADDRESS_SMARTFORM_TITLE}">
+				<subSections>
+					<ObjectPageSubSection id="_IDEGen_objectpagesubsection0" title="">
+						<blocks>
+							<core:Fragment id="_IDEGen_fragment0" fragmentName="fin.cash.bankmaster.manage/fragment/addressSmartForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar id="_IDEGen_overflowtoolbar0">
+				<m:Button id="messagesIndicator" icon="sap-icon://alert" type="Emphasized" press="onMessagePopoverPressed"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer0"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer1"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer2"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer3"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer4"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer5"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer6"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer7"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer8"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer9"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer10"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer11"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer12"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer13"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer14"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer15"/>
+				<m:ToolbarSpacer id="_IDEGen_toolbarspacer16"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer17"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer18"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer19"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer20"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer21"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer22"/><m:ToolbarSpacer id="_IDEGen_toolbarspacer23"/>
+				<m:Button id="fin.cash.bankmaster.manage.saveButton" press="onSaveButtonPressed" text="{i18n>SAVE_BUTTON}" tooltip="{i18n>SAVE_TOOLTIP}"
+					type="Emphasized"/>
+				<m:Button id="fin.cash.bankmaster.manage.cancelButton" press="onCancelButtonPressed" text="{i18n>CANCEL_BUTTON}"
+					tooltip="{i18n>CANCEL_TOOLTIP}"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</core:View>

@@ -1,0 +1,222 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" controllerName="fin.cash.bankmaster.manage.controller.ManageBanks"
+	xmlns:variants="sap.ui.comp.smartvariants" xmlns:mvc="sap.ui.core.mvc" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:smartlink="sap.ui.comp.navpopover" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+	<f:DynamicPage id="DynamicaPage" preserveHeaderStateOnScroll="true" headerExpanded="{page>/headerExpanded}" showFooter="true"
+		fitContent="true">
+		<f:title>
+			<f:DynamicPageTitle id="ManageBanksDynamicTitle">
+				<f:heading>
+					<variants:SmartVariantManagement id="PageVariant" persistencyKey="bankSmartFilterBarPersistencyKey" showShare="true"
+						showExecuteOnSelection="true"/>
+				</f:heading>
+				<f:actions>
+					<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+					<Button text="{i18n>MANAGE_BANK_HIERARCHY}" press="onManageBankHierarchyPressed" tooltip="{i18n>MANAGE_BANK_HIERARCHY}"
+						id="fin.cash.bankmaster.manage.managebankhierarchy" type="Transparent"/>
+					<Button id="ToggleHeaderButton" text="{path:'page>/headerExpanded', formatter:'.formatToggleButtonText'}" type="Transparent"
+						press="onToggleHeaderPressed"/>
+					<Button id="ShareButton" icon="sap-icon://action" tooltip="{i18n>SHARE_BUTTON}" type="Transparent" press="onShareButtonPressed"/>
+				</f:actions>
+				<f:snappedContent>
+					<Text id="FilterText" wrapping="false"></Text>
+				</f:snappedContent>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="false" id="ManageBanksDynamicHeader">
+				<f:content>
+					<smartfilterbar:SmartFilterBar id="fin.cash.bankmaster.manage.bankSmartFilterBar" entitySet="BankSet" smartVariant="PageVariant"
+						useToolbar="false" assignedFiltersChanged="onAssignedFiltersChanged" beforeVariantFetch="onBeforeVariantSave" search="onSearchButtonPressed"
+						afterVariantLoad="onAfterVariantLoad" initialise="onSmartFilterInitialise" persistencyKey="fin.cash.bankmaster.manage.banksmartfilterbar">
+						<smartfilterbar:customData>
+							<core:CustomData id="smartfilterbarcustomdata" key="defaultTokenDisplayBehaviour" value="idAndDescription"/>
+						</smartfilterbar:customData>
+						<smartfilterbar:controlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankCountry" id="fin.cash.bankmaster.manage.bankSmartBankCountry.FilterBar"
+								displayBehaviour="idAndDescription" label="{/#Bank/BankCountry/@sap:label}" mandatory="notMandatory" filterType="multiple" index="1"
+								groupId="BankSelection" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankInternalId" label="{/#Bank/BankInternalId/@sap:label}" index="2" groupId="BankSelection"
+								displayBehaviour="idAndDescription" visibleInAdvancedArea="true" id="fin.cash.bankmaster.manage.BankInternalId.FilterBar"
+								preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankNumber" label="{/#Bank/BankNumber/@sap:label}"
+								id="fin.cash.bankmaster.manage.bankSmartBankNumber.FilterBar" mandatory="notMandatory" index="3" groupId="BankSelection"
+								visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankCity" label="{/#Bank/BankCity/@sap:label}"
+								id="fin.cash.bankmaster.manage.bankSmartBankCity.FilterBar" mandatory="notMandatory" filterType="single" index="4" groupId="BankSelection"
+								visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="Swift" label="{/#Bank/Swift/@sap:label}" id="fin.cash.bankmaster.manage.bankSmartSwift.FilterBar"
+								mandatory="notMandatory" filterType="multiple" index="5" groupId="BankSelection" visibleInAdvancedArea="true"
+								preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="HasHouseBanks" label="{i18n>LINKED_HOUSE_BANKS}" mandatory="notMandatory"
+								controlType="dropDownList" groupId="BankSelection" filterType="multiple" index="6" visibleInAdvancedArea="true"
+								id="fin.cash.bankmaster.manage.hasHouseBanksFilter.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="HasBankAccounts" label="{i18n>LINKED_BANK_ACCOUNTS}" mandatory="notMandatory"
+								controlType="dropDownList" filterType="multiple" index="7" groupId="BankSelection" visibleInAdvancedArea="true"
+								id="fin.cash.bankmaster.manage.hasBankAccountsFilter.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="IsMarkedAsDeleted" label="{/#Bank/IsMarkedAsDeleted/@sap:label}" mandatory="notMandatory"
+								controlType="dropDownList" filterType="multiple" index="8" groupId="BankSelection" visibleInAdvancedArea="true"
+								id="fin.cash.bankmaster.manage.isMarkedAsDeletedFilter.FilterBar" preventInitialDataFetchInValueHelpDialog="false">
+								<smartfilterbar:defaultFilterValues>
+									<smartfilterbar:SelectOption id="_IDEGen_selectoption0" low="NO"></smartfilterbar:SelectOption>
+								</smartfilterbar:defaultFilterValues>
+							</smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="AddressId" label="{/#Bank/AddressId/@sap:label}" index="9" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.AddressId.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BpNumber" label="{i18n>RISK_BUSINESS_PARTNER}" filterType="multiple" index="10"
+								groupId="BankSelection" id="fin.cash.bankmaster.manage.BpNumber.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="CreateBy" label="{/#Bank/CreateBy/@sap:label}" index="11" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.CreateBy.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankName" label="{/#Bank/BankName/@sap:label}" index="12" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.BankName.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="Region" label="{/#Bank/Region/@sap:label}" filterType="multiple" index="13"
+								groupId="BankSelection" id="fin.cash.bankmaster.manage.Region.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankStreet" label="{/#Bank/BankStreet/@sap:label}" index="14" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.BankStreet.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankGroup" label="{/#Bank/BankGroup/@sap:label}" index="15" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.BankGroup.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BankBranch" label="{/#Bank/BankBranch/@sap:label}" index="16" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.BankBranch.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="Rating" label="{/#Bank/Rating/@sap:label}" index="17" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.Rating.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BpGroup" label="{/#Bank/BpGroup/@sap:label}" index="18" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.BpGroup.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="CountryName" label="{i18n>BANK_COUNTRY_NAME}" index="19" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.CountryName.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="RegionName" label="{/#Bank/RegionName/@sap:label}" index="20" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.RegionName.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="RatingText" label="{/#Bank/RatingText/@sap:label}" index="21" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.RatingText.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="NameOfBankKey" label="{/#Bank/NameOfBankKey/@sap:label}" index="22" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.NameOfBankKey.FilterBar" preventInitialDataFetchInValueHelpDialog="false" visible="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="HierarchyBankGroup" label="{/#Bank/HierarchyBankGroup/@sap:label}" index="23"
+								groupId="BankSelection" id="fin.cash.bankmaster.manage.HierarchyBankGroup.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="HouseBankCount" label="{/#Bank/HouseBankCount/@sap:label}" index="24" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.HouseBankCount.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="AccountCount" label="{/#Bank/AccountCount/@sap:label}" index="25" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.AccountCount.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="MyBank" label="{/#Bank/MyBank/@sap:label}" index="26" groupId="BankSelection"
+								visibleInAdvancedArea="true" id="fin.cash.bankmaster.manage.MyBank.FilterBar" preventInitialDataFetchInValueHelpDialog="false">
+								<smartfilterbar:customControl>
+									<Select id="MyBankComboBox" selectedKey=" ">
+										<core:Item id="_IDEGen_item0" key=" " text="{i18n>MY_BANK_SELECT_ITEM_ALL}"/>
+										<core:Item id="_IDEGen_item1" key="X" text="{i18n>MY_BANK_SELECT_ITEM_MY_BANKS}"/>
+									</Select>
+								</smartfilterbar:customControl>
+							</smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="Ruleforintrdaybnkstatimport" label="{/#Bank/Ruleforintrdaybnkstatimport/@sap:label}" index="26"
+								groupId="BankSelection" id="fin.cash.bankmaster.manage.Ruleforintrdaybnkstatimport.FilterBar"
+								preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="InternalBankCategory" label="{i18n>BANK_CATEGORY}" index="28" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.InternalBankCategory.FilterBar" preventInitialDataFetchInValueHelpDialog="false" controlType="dropDownList"
+								displayBehaviour="descriptionOnly"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="UsedBpCount" label="{/#Bank/UsedBpCount/@sap:label}" index="29" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.UsedBpCount.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="UsedCompnayCount" label="{/#Bank/UsedCompnayCount/@sap:label}" index="30" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.UsedCompnayCount.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+							<smartfilterbar:ControlConfiguration key="BpNumberName" label="{/#Bank/BpNumberName/@sap:label}" index="31" groupId="BankSelection"
+								id="fin.cash.bankmaster.manage.BpNumberName.FilterBar" preventInitialDataFetchInValueHelpDialog="false"></smartfilterbar:ControlConfiguration>
+						</smartfilterbar:controlConfiguration>
+						<smartfilterbar:groupConfiguration>
+							<smartfilterbar:GroupConfiguration id="_IDEGen_groupconfiguration0" key="BankSelection" label="{i18n>BANK_SEL_TITLE}"/>
+						</smartfilterbar:groupConfiguration>
+						<smartfilterbar:layoutData>
+							<FlexItemData id="_IDEGen_flexitemdata1" shrinkFactor="0"/>
+						</smartfilterbar:layoutData>
+					</smartfilterbar:SmartFilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<smarttable:SmartTable id="fin.cash.bankmaster.manage.bankSmartTable" entitySet="AnalyticalBankSet"
+				smartFilterId="fin.cash.bankmaster.manage.bankSmartFilterBar" tableType="ResponsiveTable" enableAutoBinding="false"
+				afterVariantApply="onAfterApplyTableVariant" beforeRebindTable="onBeforeRebindBankTable" header="{i18n>BANK_SMART_ANALYTICAL_TABLE_HEADER}"
+				persistencyKey="fin.cash.bankmaster.manage.bankSmartResponsiveTable"
+				ignoreFromPersonalisation="BankName,CountryName,BpNumberName,RatingText,RegionName,NameOfBankKey,BankCategoryDesc"
+				placeToolbarInTable="true">
+				<smarttable:customToolbar>
+					<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent">
+						<ToolbarSpacer id="_IDEGen_toolbarspacer1"/>
+						<SearchField id="bankTableSearchField" search="onSearchButtonPressed">
+							<layoutData>
+								<OverflowToolbarLayoutData id="_IDEGen_overflowtoolbarlayoutdata0" minWidth="200px" maxWidth="300px" shrinkable="true"/>
+							</layoutData>
+						</SearchField>
+						<Button text="{i18n>CREATE}" press="onCreateButtonPressed" tooltip="{i18n>CREATE_BANK_TOOLTIP}" id="fin.cash.bankmaster.manage.createbank"/>
+					</OverflowToolbar>
+				</smarttable:customToolbar>
+				<smarttable:layoutData>
+					<FlexItemData id="_IDEGen_flexitemdata0" growFactor="1"/>
+				</smarttable:layoutData>
+				<smarttable:semanticObjectController>
+					<smartlink:SemanticObjectController id="ManageBanksPageSemanticObjectController" beforePopoverOpens="onBeforePopoverOpens"/>
+				</smarttable:semanticObjectController>
+				<Table id="fin.cash.bankmaster.manage.managebankResponsiveTable" growingScrollToLoad="true" sticky="ColumnHeaders,HeaderToolbar"
+					growing="true" autoPopinMode="true">
+					<columns>
+						<Column id="fin.cash.bankmaster.manage.myBankColumn" visible="false">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata0" key="p13nData"
+									value='\{"columnKey": "MyBank", "leadingProperty": "MyBank", "sortProperty": "MyBank", "filterProperty": "MyBank"}'/>
+							</customData>
+							<Text id="_IDEGen_text0" text="{/#Bank/MyBank/@sap:label}" tooltip="{/#Bank/MyBank/@sap:label}"/>
+						</Column>
+						<Column id="fin.cash.bankmaster.manage.bpNumberColumn">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata5" key="p13nData"
+									value='\{"columnKey": "BpNumber", "leadingProperty": "BpNumber", "sortProperty": "BpNumber", "filterProperty": "BpNumber","additionalProperty":"BpNumberName","columnIndex":"123" }'/>
+							</customData>
+							<Text id="_IDEGen_text5" text="{i18n>RISK_BUSINESS_PARTNER}" tooltip="{i18n>RISK_BUSINESS_PARTNER}"/>
+						</Column>
+						<Column id="fin.cash.bankmaster.manage.accountCountColumn">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata6" key="p13nData"
+									value='\{"columnKey": "AccountCount", "leadingProperty": "AccountCount", "sortProperty": "AccountCount", "filterProperty": "AccountCount","columnIndex":"124"}'/>
+							</customData>
+							<Text id="_IDEGen_text6" text="{/#Bank/AccountCount/@sap:label}" tooltip="{/#Bank/AccountCount/@sap:label}"/>
+						</Column>
+						<Column id="fin.cash.bankmaster.manage.houseBankCountColumn">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata7" key="p13nData"
+									value='\{"columnKey": "HouseBankCount", "leadingProperty": "HouseBankCount", "sortProperty": "HouseBankCount", "filterProperty": "HouseBankCount","columnIndex":"125"}'/>
+							</customData>
+							<Text id="_IDEGen_text7" text="{/#Bank/HouseBankCount/@sap:label}" tooltip="{/#Bank/HouseBankCount/@sap:label}"/>
+						</Column>
+						<Column id="fin.cash.bankmaster.manage.hasHouseBanks" visible="false">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata8" key="p13nData"
+									value='\{"columnKey": "HasHouseBanks", "leadingProperty": "HasHouseBanks", "sortProperty": "HasHouseBanks", "filterProperty": "HasHouseBanks","columnIndex":"126"}'/>
+							</customData>
+							<Text id="_IDEGen_text8" text="{i18n>LINKED_HOUSE_BANKS}" tooltip="{i18n>LINKED_HOUSE_BANKS}"/>
+						</Column>
+						<Column id="fin.cash.bankmaster.manage.HasBankAccounts" visible="false">
+							<customData>
+								<core:CustomData id="_IDEGen_customdata9" key="p13nData"
+									value='\{"columnKey": "HasBankAccounts", "leadingProperty": "HasBankAccounts", "sortProperty": "HasBankAccounts", "filterProperty": "HasBankAccounts","columnIndex":"127"}'/>
+							</customData>
+							<Text id="_IDEGen_text9" text="{i18n>LINKED_BANK_ACCOUNTS}" tooltip="{i18n>LINKED_BANK_ACCOUNTS}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem id="_IDEGen_columnlistitem0" type="Navigation" press="onNavigateToDetailPressed">
+							<cells>
+								<Text id="_IDEGen_text10" text="{MyBank}"/>
+								<smartlink:SmartLink id="_IDEGen_smartlink2" text="{parts:['BpNumber','BpNumberName'],formatter:'.formatter.formatKeyAndDescription'}"
+									semanticObject="BusinessPartner" wrapping="true"/>
+								<smartlink:SmartLink id="_IDEGen_smartlink1" semanticObject="BankAccount" text="{AccountCount}"
+									navigationTargetsObtained="onNavTargetsObtained" forceLinkRendering="false" innerNavigate="onPopoverLinkPressed"/>
+								<Text id="_IDEGen_text16" text="{HouseBankCount}"/>
+								<Text id="_IDEGen_text17" text="{HasHouseBanks}"/>
+								<Text id="_IDEGen_text18" text="{HasBankAccounts}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</smarttable:SmartTable>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

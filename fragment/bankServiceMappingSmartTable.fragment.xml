@@ -1,0 +1,30 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column" xmlns:smartlink="sap.ui.comp.navpopover">
+	<smarttable:SmartTable id="fin.cash.bankmaster.manage.bankfeeservicesmarttable" tableType="ResponsiveTable" entitySet="BankServiceSet"
+		enableAutoBinding="false" header="{i18n>SERVICE_OBJECTPAGESECTION_TEXT}" showRowCount="true" useVariantManagement="true"
+		ignoreFromPersonalisation="BankName,CountryName,CreatedByUserFullname,LastChangedByUserFullname"
+		beforeRebindTable="onBeforeRebindServiceCodeTable" persistencyKey="fin.cash.bankmaster.manage.serviceCodePersistencyKey" demandPopin="true">
+		<smarttable:customToolbar>
+			<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent">
+				<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+				<Button text="{i18n>CREATE}" press="onAddServiceCodeIconPressed" id="addServiceIcon" enabled="{= ${viewMode>/mode} === 'edit'}"/>
+				<Button text="{i18n>DELETE_BUTTON}" press="onDeleteServiceCodeIconPressed" id="deleteServiceCodeIcon"
+					enabled="{= ${viewMode>/mode} === 'edit'}"/>
+			</OverflowToolbar>
+		</smarttable:customToolbar>
+		<smarttable:semanticObjectController>
+			<smartlink:SemanticObjectController id="BankServiceMappingTableSemanticController" beforePopoverOpens="onBeforePopoverOpens"/>
+		</smarttable:semanticObjectController>
+		<Table id="onServiceCodeTableMode" mode="{= ${viewMode>/mode} === 'edit' ? 'MultiSelect' : 'None'}">
+			<columns/>
+			<items>
+				<ColumnListItem id="ServiceColumnListItem" type="Navigation" press="onServiceCodeListItemPressed"/>
+			</items>
+		</Table>
+	</smarttable:SmartTable>
+</core:FragmentDefinition>

@@ -1,0 +1,41 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:View xmlns="sap.uxap" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.m.semantic"
+	xmlns:ushell="sap.ushell.ui" controllerName="fin.cash.bankmaster.manage.controller.ManageUsedUnits">
+	<ObjectPageLayout id="UsedUnitsViewObjectPageLayout" enableLazyLoading="true" showTitleInHeaderContent="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle id="UsedUnitsViewDynamicHeader">
+				<heading></heading>
+				<actions>
+					<m:Button id="fin.cash.bankmaster.manage.share" icon="sap-icon://action" tooltip="{i18n>SHARE_BUTTON}" type="Transparent"
+						press="onShareButtonPressed"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<sections>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.usedBPSmartResponsiveTableSection"
+				title="{i18n>USED_BUSINESS_PARTNER_SMART_RESPONSIVE_TABLE_HEADER}">
+				<subSections>
+					<ObjectPageSubSection id="_IDEGen_objectpagesubsection0" title="">
+						<blocks>
+							<core:Fragment id="_IDEGen_fragment0" fragmentName="fin.cash.bankmaster.manage/fragment/usedBusinessPartnerSmartResponsiveTable" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection id="fin.cash.bankmaster.manage.usedCompanySmartResponsiveTableSection"
+				title="{i18n>USED_COMPANY_SMART_RESPONSIVE_TABLE_HEADER}">
+				<subSections>
+					<ObjectPageSubSection id="_IDEGen_objectpagesubsection1" title="">
+						<blocks>
+							<core:Fragment id="_IDEGen_fragment1" fragmentName="fin.cash.bankmaster.manage/fragment/usedCompanySmartResponsiveTable" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</core:View>

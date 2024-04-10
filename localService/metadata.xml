@@ -1,0 +1,1659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Communication" Namespace="com.sap.vocabularies.Communication.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="PersonalData" Namespace="com.sap.vocabularies.PersonalData.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Validation" Namespace="Org.OData.Validation.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Analytics" Namespace="com.sap.vocabularies.Analytics.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="Measures" Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://localhost/" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="FCLM_BM_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="F4_TypeOfSignature" sap:content-version="1" sap:label="Ty." sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property MaxLength="1" Name="Code" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ty." sap:sortable="false" sap:text="Text" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="Text" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_DeliveryType" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="DELI_SERV_TYPE"/>
+				</Key>
+				<Property MaxLength="4" Name="DELI_SERV_TYPE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Type of Delivery Service" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="DELI_SERV_TEXT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Delivery Service Text" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_InstructionKey" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Dtaws"/>
+				</Key>
+				<Property MaxLength="2" Name="Dtaws" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Instruction Key" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="Dtzus" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Additional Info" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_IsoCurrencyCode" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Waers"/>
+				</Key>
+				<Property MaxLength="5" Name="Waers" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Currency" sap:semantics="currency-code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="Isocd" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="ISO Currency Code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="Ltext" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_MultiKey" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="NATION"/>
+				</Key>
+				<Property MaxLength="1" Name="NATION" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Nation" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="16" Name="NATION_TEX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Nation Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Position" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Pafkt"/>
+				</Key>
+				<Property MaxLength="4" Name="Pafkt" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Position" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Bez30" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Rating" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Rating"/>
+				</Key>
+				<Property MaxLength="3" Name="Rating" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Rating" sap:sortable="false" sap:text="Xrating" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="Xrating" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Region" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Country"/>
+					<PropertyRef Name="Region"/>
+				</Key>
+				<Property MaxLength="3" Name="Country" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="Region" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Region" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Title" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Title"/>
+				</Key>
+				<Property MaxLength="4" Name="Title" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Title" sap:sortable="false" sap:text="Title_Medi" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Title_Medi" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="TitleText" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="UsedBp" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BpNumber"/>
+				</Key>
+				<Property MaxLength="10" Name="BpNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Business Partner" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="50" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="BpName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Business Partner Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Key" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="255" Name="BpRole" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Business Partner Role" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BpCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BpCountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="BpCity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="City" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_CountryDialingCode" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Country"/>
+				</Key>
+				<Property MaxLength="3" Name="Country" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="CountryDialingCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country Dialing Code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="BankCountInfo" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalId"/>
+				</Key>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Key" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="UsedUnitCount" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:label="Number of Used Units" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="Bank" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalId"/>
+				</Key>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Bank Country" sap:text="CountryName" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="5" Name="Ruleforintrdaybnkstatimport" Type="Edm.String" sap:display-format="UpperCase" sap:label="External ID of rule" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="1" Name="DeletionMark" Type="Edm.String" sap:label="Mark as Deleted" sap:unicode="false"/>
+				<Property Name="Hasattachment" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="HasAttachment" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Bank Key" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="10" Name="AddressId" Type="Edm.String" sap:filterable="false" sap:label="Address ID" sap:unicode="false"/>
+				<Property MaxLength="10" Name="BpNumber" Type="Edm.String" sap:display-format="UpperCase" sap:label="Risk Business Partner" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="12" Name="CreateBy" Type="Edm.String" sap:label="Creator" sap:unicode="false"/>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:label="Bank Name" sap:unicode="false"/>
+				<Property MaxLength="3" Name="Region" Type="Edm.String" sap:display-format="UpperCase" sap:label="Region" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="35" Name="BankStreet" Type="Edm.String" sap:label="Street" sap:unicode="false"/>
+				<Property MaxLength="35" Name="BankCity" Type="Edm.String" sap:label="City" sap:unicode="false"/>
+				<Property MaxLength="11" Name="Swift" Type="Edm.String" sap:display-format="UpperCase" sap:label="SWIFT/BIC" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="2" Name="BankGroup" Type="Edm.String" sap:label="Bank Group" sap:unicode="false"/>
+				<Property MaxLength="15" Name="BankNumber" Type="Edm.String" sap:label="Bank Number" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="40" Name="BankBranch" Type="Edm.String" sap:label="Bank Branch" sap:unicode="false"/>
+				<Property MaxLength="3" Name="Rating" Type="Edm.String" sap:display-format="UpperCase" sap:label="Rating" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="4" Name="BpGroup" Type="Edm.String" sap:label="Business Partner Grouping" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="15" Name="CountryName" Type="Edm.String" sap:label="Name" sap:unicode="false"/>
+				<Property MaxLength="20" Name="RegionName" Type="Edm.String" sap:label="Region Name Description" sap:unicode="false"/>
+				<Property MaxLength="40" Name="RatingText" Type="Edm.String" sap:label="Rating Text Description" sap:unicode="false"/>
+				<Property MaxLength="1" Name="NameOfBankKey" Type="Edm.String" sap:label="Name of Bank Key" sap:unicode="false"/>
+				<Property MaxLength="40" Name="HierarchyBankGroup" Type="Edm.String" sap:label="Bank Hierarchy Group" sap:unicode="false"/>
+				<Property Name="UsedBpCount" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:label="Number of Business Partners Used" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="UsedCompnayCount" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:label="Number of Used Companies" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="HouseBankCount" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:label="Number of House Banks" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="AccountCount" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:label="Number of Bank Accounts" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="HasHouseBanks" Type="Edm.String" sap:label="House Banks" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="3" Name="HasBankAccounts" Type="Edm.String" sap:label="Bank Accounts" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="3" Name="IsMarkedAsDeleted" Type="Edm.String" sap:label="Mark as Deleted" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="25" Name="MyBank" Type="Edm.String" sap:label="Bank Type" sap:unicode="false"/>
+				<Property MaxLength="1" Name="InternalBankCategory" Type="Edm.String" sap:label="Internal Bank Category" sap:unicode="false"/>
+				<Property MaxLength="81" Name="BpNumberName" Type="Edm.String" sap:label="Risk Business Partner Name" sap:unicode="false"/>
+				<NavigationProperty FromRole="FromRole_BanktoRelatedBranches" Name="BanktoRelatedBranchesSet" Relationship="FCLM_BM_SRV.BanktoRelatedBranches" ToRole="ToRole_BanktoRelatedBranches"/>
+				<NavigationProperty FromRole="FromRole_BankToChangeDocument" Name="BankToChangeDocumentSet" Relationship="FCLM_BM_SRV.BankToChangeDocument" ToRole="ToRole_BankToChangeDocument"/>
+				<NavigationProperty FromRole="FromRole_BankToBankService" Name="BankToBankServiceSet" Relationship="FCLM_BM_SRV.BankToBankService" ToRole="ToRole_BankToBankService"/>
+				<NavigationProperty FromRole="FromRole_BankToDefaultableBP" Name="BankToDefaultableBPSet" Relationship="FCLM_BM_SRV.BankToDefaultableBP" ToRole="ToRole_BankToDefaultableBP"/>
+				<NavigationProperty FromRole="FromRole_BankToUsedBp" Name="BankToUsedBpSet" Relationship="FCLM_BM_SRV.BankToUsedBp" ToRole="ToRole_BankToUsedBp"/>
+				<NavigationProperty FromRole="FromRole_BankToUsedCompany" Name="BankToUsedCompanySet" Relationship="FCLM_BM_SRV.BankToUsedCompany" ToRole="ToRole_BankToUsedCompany"/>
+				<NavigationProperty FromRole="FromRole_BankToBpContact" Name="BankToBpContactSet" Relationship="FCLM_BM_SRV.BankToBpContact" ToRole="ToRole_BankToBpContact"/>
+				<NavigationProperty FromRole="FromRole_BankToHouseBank" Name="BankToHouseBankSet" Relationship="FCLM_BM_SRV.BankToHouseBank" ToRole="ToRole_BankToHouseBank"/>
+				<NavigationProperty FromRole="FromRole_BankToAddress" Name="BankToAddressSet" Relationship="FCLM_BM_SRV.BankToAddress" ToRole="ToRole_BankToAddress"/>
+				<NavigationProperty FromRole="FromRole_BankToTimeline" Name="BankToTimelineSet" Relationship="FCLM_BM_SRV.BankToTimeline" ToRole="ToRole_BankToTimeline"/>
+				<NavigationProperty FromRole="FromRole_BankToCountInfo" Name="BankToCountInfoSet" Relationship="FCLM_BM_SRV.BankToCountInfo" ToRole="ToRole_BankToCountInfo"/>
+			</EntityType>
+			<EntityType Name="Address" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="AddressId"/>
+					<PropertyRef Name="Nation"/>
+				</Key>
+				<Property MaxLength="40" Name="AddressCity" Type="Edm.String" sap:label="City" sap:unicode="false"/>
+				<Property MaxLength="3" Name="AddressCountry" Nullable="false" Type="Edm.String" sap:label="Country" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="15" Name="AddressCountryText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressGroup" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Address Group" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="AddressId" Nullable="false" Type="Edm.String" sap:label="Address ID" sap:unicode="false"/>
+				<Property MaxLength="40" Name="AddressLine1" Type="Edm.String" sap:label="Address Line 1" sap:unicode="false"/>
+				<Property MaxLength="40" Name="AddressLine2" Type="Edm.String" sap:label="Address Line 2" sap:unicode="false"/>
+				<Property MaxLength="40" Name="AddressLine3" Type="Edm.String" sap:label="Address Line 3" sap:unicode="false"/>
+				<Property MaxLength="40" Name="AddressLine4" Type="Edm.String" sap:label="Address Line 4" sap:unicode="false"/>
+				<Property MaxLength="3" Name="BankCountry" Type="Edm.String" sap:label="Bank Country" sap:unicode="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Type="Edm.String" sap:label="Bank Key" sap:unicode="false"/>
+				<Property MaxLength="10" Name="BpNumber" Type="Edm.String" sap:label="BusinessPartner" sap:unicode="false"/>
+				<Property MaxLength="20" Name="Building" Type="Edm.String" sap:label="Building Code" sap:unicode="false"/>
+				<Property MaxLength="40" Name="CareOfName" Type="Edm.String" sap:label="c/o Name" sap:unicode="false"/>
+				<Property MaxLength="50" Name="Comments" Type="Edm.String" sap:label="Notes" sap:unicode="false"/>
+				<Property MaxLength="2" Name="CommunicationLanguage" Type="Edm.String" sap:label="Language" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="10" Name="CompanyPostalCode" Type="Edm.String" sap:label="Company Post Code" sap:unicode="false"/>
+				<Property MaxLength="40" Name="DataLine" Type="Edm.String" sap:label="Data Line" sap:unicode="false"/>
+				<Property MaxLength="10" Name="DeliveryServiceNumber" Type="Edm.String" sap:label="Delivery Service No." sap:unicode="false"/>
+				<Property MaxLength="4" Name="DeliveryServiceType" Type="Edm.String" sap:label="Delivery Service Type" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:label="District" sap:unicode="false"/>
+				<Property MaxLength="241" Name="EmailAddress" Type="Edm.String" sap:label="E-Mail Address" sap:unicode="false"/>
+				<Property MaxLength="3" Name="FaxCountry" Type="Edm.String" sap:display-format="UpperCase" sap:label="Fax Country" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="5" Name="FaxDialingCode" Type="Edm.String" sap:label="Fax Dialing Code" sap:unicode="false"/>
+				<Property MaxLength="30" Name="FaxNumber" Type="Edm.String" sap:label="Fax" sap:unicode="false"/>
+				<Property MaxLength="10" Name="FaxNumberExtension" Type="Edm.String" sap:label="Fax Extension" sap:unicode="false"/>
+				<Property MaxLength="10" Name="Floor" Type="Edm.String" sap:label="Floor" sap:unicode="false"/>
+				<Property MaxLength="10" Name="HouseNumber" Type="Edm.String" sap:label="House Number / Street" sap:unicode="false"/>
+				<Property MaxLength="10" Name="HouseNumberSupplement" Type="Edm.String" sap:label="Supplement" sap:unicode="false"/>
+				<Property MaxLength="5" Name="MobileDialingCode" Type="Edm.String" sap:label="Mobile Dialing Code" sap:unicode="false"/>
+				<Property MaxLength="30" Name="MobileNumber" Type="Edm.String" sap:label="Mobile Number" sap:unicode="false"/>
+				<Property MaxLength="3" Name="MobileNumberCountry" Type="Edm.String" sap:display-format="UpperCase" sap:label="Mobile" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="40" Name="Name" Type="Edm.String" sap:label="Name" sap:unicode="false"/>
+				<Property MaxLength="1" Name="Nation" Nullable="false" Type="Edm.String" sap:label="International Version" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="16" Name="NationName" Type="Edm.String" sap:label="International Version" sap:unicode="false"/>
+				<Property MaxLength="10" Name="PhoneNumberExtension" Type="Edm.String" sap:label="Telephone Extension" sap:unicode="false"/>
+				<Property MaxLength="10" Name="PoBox" Type="Edm.String" sap:label="PO Box" sap:unicode="false"/>
+				<Property MaxLength="40" Name="PoBoxCity" Type="Edm.String" sap:label="PO Box City" sap:unicode="false"/>
+				<Property MaxLength="3" Name="PoBoxCountry" Type="Edm.String" sap:label="PO Box Country" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="15" Name="PoBoxCountryText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PO Box Country Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="PoBoxLobby" Type="Edm.String" sap:label="PO Box Lobby" sap:unicode="false"/>
+				<Property MaxLength="10" Name="PoBoxPostalCode" Type="Edm.String" sap:label="PO Box Post Code" sap:unicode="false"/>
+				<Property MaxLength="3" Name="PoBoxRegion" Type="Edm.String" sap:label="PO Region" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="20" Name="PoboxRegionText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PO Box Region Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="PoBoxWithoutNumber" Type="Edm.String" sap:label="PO Box w/o Number" sap:unicode="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:label="Postal Code" sap:unicode="false"/>
+				<Property Name="RatingLevel" Type="Edm.Byte" sap:label="Rating Level" sap:unicode="false"/>
+				<Property Name="RatingMethod" Type="Edm.Byte" sap:label="Rating Method" sap:unicode="false"/>
+				<Property MaxLength="10" Name="RoomNumber" Type="Edm.String" sap:label="Room Number" sap:unicode="false"/>
+				<Property MaxLength="20" Name="SearchTerm1" Type="Edm.String" sap:label="Search Term 1" sap:unicode="false"/>
+				<Property MaxLength="20" Name="SearchTerm2" Type="Edm.String" sap:label="Search Term 2" sap:unicode="false"/>
+				<Property MaxLength="3" Name="State" Type="Edm.String" sap:label="Region" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="20" Name="StateName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Region Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="Street" Type="Edm.String" sap:label="Street" sap:unicode="false"/>
+				<Property MaxLength="15" Name="Taxjurisdiction" Type="Edm.String" sap:label="Tax Jurisdiction Code" sap:unicode="false"/>
+				<Property MaxLength="40" Name="TeleBox" Type="Edm.String" sap:label="Telebox" sap:unicode="false"/>
+				<Property MaxLength="5" Name="TelephoneDialingCode" Type="Edm.String" sap:label="Telephone Dialing Code" sap:unicode="false"/>
+				<Property MaxLength="30" Name="TelephoneNumber" Type="Edm.String" sap:label="Telephone Number" sap:unicode="false"/>
+				<Property MaxLength="3" Name="TelephoneNumberCountry" Type="Edm.String" sap:display-format="UpperCase" sap:label="Telephone Number Country" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="6" Name="Timezone" Type="Edm.String" sap:label="Time Zone" sap:text="TimezoneName" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="30" Name="TimezoneName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Timezone Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Title" Type="Edm.String" sap:label="Title" sap:unicode="false"/>
+				<Property MaxLength="10" Name="TransportationZone" Type="Edm.String" sap:label="Transportation Zone" sap:unicode="false"/>
+				<Property MaxLength="20" Name="TransportationZoneText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Transportation Zone Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="Village" Type="Edm.String" sap:label="Village" sap:unicode="false"/>
+			</EntityType>
+			<EntityType Name="BpContact" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalId"/>
+					<PropertyRef Name="BpNumber"/>
+					<PropertyRef Name="ContactPersonNumber"/>
+				</Key>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:label="Bank Country" sap:unicode="false"/>
+				<Property MaxLength="50" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:label="Bank Key" sap:unicode="false"/>
+				<Property MaxLength="10" Name="BpNumber" Nullable="false" Type="Edm.String" sap:label="Bank BP Number" sap:unicode="false"/>
+				<Property MaxLength="10" Name="ContactPersonNumber" Nullable="false" Type="Edm.String" sap:label="Contact Number" sap:unicode="false"/>
+				<Property MaxLength="3" Name="Region" Type="Edm.String" sap:label="Region" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="10" Name="AddressId" Type="Edm.String" sap:label="Address ID" sap:unicode="false"/>
+				<Property MaxLength="6" Name="Role" Type="Edm.String" sap:label="BP Role" sap:unicode="false"/>
+				<Property MaxLength="4" Name="Title" Type="Edm.String" sap:label="Title" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="40" Name="FirstName" Nullable="false" Type="Edm.String" sap:label="First Name" sap:unicode="false"/>
+				<Property MaxLength="40" Name="LastName" Nullable="false" Type="Edm.String" sap:label="Last Name" sap:unicode="false"/>
+				<Property MaxLength="4" Name="Function" Type="Edm.String" sap:label="Position" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="4" Name="Department" Type="Edm.String" sap:label="Department" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="30" Name="TelephoneNumber" Type="Edm.String" sap:label="Telephone" sap:unicode="false"/>
+				<Property MaxLength="30" Name="MobileNumber" Type="Edm.String" sap:label="Mobile Phone" sap:unicode="false"/>
+				<Property MaxLength="30" Name="FaxNumber" Type="Edm.String" sap:label="Fax" sap:unicode="false"/>
+				<Property MaxLength="241" Name="EmailAddress" Type="Edm.String" sap:label="E-Mail Address" sap:unicode="false"/>
+				<Property MaxLength="3" Name="AddressCountry" Nullable="false" Type="Edm.String" sap:label="Country" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="60" Name="Street" Type="Edm.String" sap:label="Street" sap:unicode="false"/>
+				<Property MaxLength="10" Name="HouseNumber" Type="Edm.String" sap:label="House Number" sap:unicode="false"/>
+				<Property MaxLength="40" Name="AddressCity" Type="Edm.String" sap:label="City" sap:unicode="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:label="Postal Code" sap:unicode="false"/>
+				<Property MaxLength="20" Name="Building" Type="Edm.String" sap:label="Building Code" sap:unicode="false"/>
+				<Property MaxLength="10" Name="Floor" Type="Edm.String" sap:label="Floor" sap:unicode="false"/>
+				<Property MaxLength="10" Name="RoomNumber" Type="Edm.String" sap:label="Room Number" sap:unicode="false"/>
+				<Property MaxLength="30" Name="FunctionName" Type="Edm.String" sap:label="Description" sap:unicode="false"/>
+				<Property MaxLength="30" Name="DepartmentName" Type="Edm.String" sap:label="Description" sap:unicode="false"/>
+				<Property MaxLength="81" Name="BpNumberName" Type="Edm.String" sap:label="Bank BP Number Name" sap:unicode="false"/>
+			</EntityType>
+			<EntityType Name="HouseBank" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="CompanyCode"/>
+					<PropertyRef Name="HouseBankKey"/>
+				</Key>
+				<Property MaxLength="50" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CompanyCode" Nullable="false" Type="Edm.String" sap:label="Company Code" sap:sortable="false" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="HouseBankKey" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="House Bank" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="25" Name="CompanyName" Type="Edm.String" sap:label="Company Name" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="3" Name="BankCountry" Type="Edm.String" sap:label="Bank Country" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Type="Edm.String" sap:label="Bank Key" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="5" Name="AlternativeBankId" Type="Edm.String" sap:label="Alternative Bank ID" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="15" Name="BankNoReceiver" Type="Edm.String" sap:label="Bank No. Receiver" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="18" Name="CustomerNumber" Type="Edm.String" sap:label="Customer Number" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="20" Name="CompanyNumber" Type="Edm.String" sap:label="Company Number" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="10" Name="PartnerNumber" Type="Edm.String" sap:label="Partner Number" sap:sortable="false" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="1" Name="TypeOfSignature" Type="Edm.String" sap:label="Type of Signature" sap:sortable="false" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="15" Name="BankNumber" Type="Edm.String" sap:label="Bank Number" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="35" Name="AccountNumber" Type="Edm.String" sap:label="Account Number" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="2" Name="ControlKey" Type="Edm.String" sap:label="Control Key" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="3" Name="IsoCurrencyCode" Type="Edm.String" sap:label="ISO Currency Code" sap:sortable="false" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="2" Name="InstructionKey" Type="Edm.String" sap:label="Instruction Key" sap:sortable="false" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="2" Name="LeadDays" Type="Edm.String" sap:label="Lead Days" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="16" Name="Telephone" Type="Edm.String" sap:label="Telephone" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="16" Name="TaxNumber" Type="Edm.String" sap:label="Tax Number" sap:sortable="false" sap:unicode="false"/>
+				<Property MaxLength="30" Name="NameOfContactPerson" Type="Edm.String" sap:label="Contact Person" sap:sortable="false" sap:unicode="false"/>
+			</EntityType>
+			<EntityType Name="UsedCompany" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="CompanyCode"/>
+				</Key>
+				<Property MaxLength="4" Name="CompanyCode" Nullable="false" Type="Edm.String" sap:label="Company Code" sap:unicode="false"/>
+				<Property MaxLength="15" Name="CompanyCountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="CompanyName" Type="Edm.String" sap:label="Company Name" sap:unicode="false"/>
+				<Property MaxLength="3" Name="BankCountry" Type="Edm.String" sap:label="Bank Country" sap:unicode="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Type="Edm.String" sap:label="Bank Key" sap:unicode="false"/>
+				<Property MaxLength="3" Name="CompanyCountry" Type="Edm.String" sap:label="Country" sap:unicode="false"/>
+				<Property MaxLength="25" Name="CompanyCity" Type="Edm.String" sap:label="City" sap:unicode="false"/>
+			</EntityType>
+			<EntityType Name="F4_Department" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Abtnr"/>
+				</Key>
+				<Property MaxLength="4" Name="Abtnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Department" sap:sortable="false" sap:text="Bez20" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="Bez20" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Timezone" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Timezone"/>
+				</Key>
+				<Property MaxLength="6" Name="Timezone" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Time Zone" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Time Zone Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_TransactionType" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="TransactionCode"/>
+				</Key>
+				<Property MaxLength="8" Name="TransactionCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Transaction Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_PartnerNumber" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Parnum"/>
+				</Key>
+				<Property MaxLength="10" Name="Parnum" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Partner No." sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_BpGroup" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="BU_GROUP"/>
+				</Key>
+				<Property MaxLength="4" Name="BU_GROUP" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Bp Group" sap:sortable="false" sap:text="BpGroupText" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="BpGroupText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Bp Group Text" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_CommunicationLanguage" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Language"/>
+				</Key>
+				<Property MaxLength="2" Name="Language" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Language" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="16" Name="Name" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Swift" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="BANKS"/>
+					<PropertyRef Name="SWIFT"/>
+				</Key>
+				<Property MaxLength="3" Name="BANKS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Bank Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="11" Name="SWIFT" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Swift" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_BankNumber" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankKey"/>
+				</Key>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Key" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_CompanyCode" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Bukrs"/>
+				</Key>
+				<Property MaxLength="4" Name="Bukrs" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Company Code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="Butxt" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Company Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="Ort01" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="City" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="Waers" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Currency" sap:semantics="currency-code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Country" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Country"/>
+				</Key>
+				<Property MaxLength="3" Name="Country" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Country" sap:sortable="false" sap:text="Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="Name" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="Nationality" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Nationality" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_ExternalTransaction" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="AmountDebitCreditCode"/>
+					<PropertyRef Name="PaymentExternalTransacType"/>
+					<PropertyRef Name="PaymentTransactionTypeGroup"/>
+				</Key>
+				<Property MaxLength="1" Name="AmountDebitCreditCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="+/- sign of the incoming amount" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="BankStatementPostingRule" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Posting Rule" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="InterpretationAlgorithm" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Interpretation algorithm" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="27" Name="PaymentExternalTransacType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="External Business Transaction" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="PaymentTransactionTypeGroup" Nullable="false" Type="Edm.String" sap:creatable="false" sap:display-format="UpperCase" sap:label="Transaction Type" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="DefaultableBP" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalId"/>
+					<PropertyRef Name="ValidFrom"/>
+				</Key>
+				<Property MaxLength="50" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:label="Bank Country" sap:unicode="false"/>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:label="Bank Key" sap:unicode="false"/>
+				<Property Name="ValidFrom" Nullable="false" Precision="0" Type="Edm.DateTime" sap:display-format="Date" sap:label="Valid From" sap:unicode="false"/>
+				<Property Name="ValidTo" Nullable="false" Precision="0" Type="Edm.DateTime" sap:display-format="Date" sap:label="Valid To" sap:unicode="false"/>
+				<Property MaxLength="10" Name="BusinessPartnerNo" Nullable="false" Type="Edm.String" sap:label="Business Partner" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="81" Name="BusinessPartnerName" Type="Edm.String" sap:label="Business Partner Name" sap:unicode="false"/>
+				<Property MaxLength="80" Name="CreatedByUserFullName" Type="Edm.String" sap:label="Created By User Full Name" sap:unicode="false"/>
+				<Property Name="CreatedDate" Precision="7" Type="Edm.DateTime" sap:display-format="Date" sap:label="Created Date" sap:unicode="false"/>
+				<Property Name="CreatedTime" Precision="0" Type="Edm.Time" sap:label="Created Time" sap:unicode="false"/>
+				<Property MaxLength="12" Name="LastChangedByUser" Type="Edm.String" sap:label="Last Changed By User" sap:unicode="false"/>
+				<Property MaxLength="80" Name="LastChangedByUserFullName" Type="Edm.String" sap:label="Last Changed By User Full Name" sap:unicode="false"/>
+				<Property Name="LastChangedDate" Precision="7" Type="Edm.DateTime" sap:display-format="Date" sap:label="Last Changed Date" sap:unicode="false"/>
+				<Property Name="LastChangedTime" Precision="0" Type="Edm.Time" sap:label="Last Changed Time" sap:unicode="false"/>
+			</EntityType>
+			<EntityType Name="F4_IntradayBkStmntImportRule" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Intrabkstaruleexternalid"/>
+				</Key>
+				<Property MaxLength="5" Name="Intrabkstaruleexternalid" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Rule for Intraday St" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="Rulename" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Rule Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="BankService" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalId"/>
+					<PropertyRef Name="BankFeeService"/>
+					<PropertyRef Name="PaymentTransactionTypeGroup"/>
+				</Key>
+				<Property MaxLength="50" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:label="Bank Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:label="Bank" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="35" Name="BankFeeService" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Service ID" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="PaymentTransactionTypeGroup" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Transaction Type" sap:unicode="false" sap:updatable="false" sap:value-list="standard"/>
+				<Property MaxLength="27" Name="PaymentExternalTransacType" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="External Transaction" sap:unicode="false" sap:value-list="standard"/>
+				<Property MaxLength="12" Name="CreatedByUser" Type="Edm.String" sap:creatable="false" sap:label="Created By User" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="CreationDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="Creation Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="CreationTime" Precision="0" Type="Edm.Time" sap:creatable="false" sap:label="Creation Time" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="LastChangedByUser" Type="Edm.String" sap:creatable="false" sap:label="Last Changed By User" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="LastChangeDate" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="Last Change Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="LastChangeTime" Precision="0" Type="Edm.Time" sap:creatable="false" sap:label="Last Change Time" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="AnalyticalBank" sap:content-version="1" sap:semantics="aggregate">
+				<Key>
+					<PropertyRef Name="GeneratedId"/>
+				</Key>
+				<Property Name="GeneratedId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="GENERATED_ID" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BankCountry" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Key" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="AddressId" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Address ID" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="BpNumber" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Business Partner" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="CreateBy" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Creator" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="BankName" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="Region" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Region" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="35" Name="BankStreet" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Street" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="35" Name="BankCity" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="City" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="11" Name="Swift" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="SWIFT/BIC" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="BankGroup" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Group" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankNumber" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Number" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="BankBranch" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Branch" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="Rating" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Rating" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="BpGroup" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Business Partner Grouping" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryName" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Country Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="RegionName" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Region Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="RatingText" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Rating Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="NameOfBankKey" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Name of Bank Key" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="HierarchyBankGroup" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Hierarchy Group" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="UsedBpCount" Type="Edm.Int32" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Number of Business Partners Used" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="UsedCompnayCount" Type="Edm.Int32" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Number of Used Companies" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="HouseBankCount" Type="Edm.Int32" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Number of House Banks" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="AccountCount" Type="Edm.Int32" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Number of Bank Accounts" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="HasHouseBanks" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="House Banks" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="HasBankAccounts" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Accounts" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="IsMarkedAsDeleted" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Mark as deleted" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="MyBank" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Bank Type" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="Ruleforintrdaybnkstatimport" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="External ID of rule" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="81" Name="BpNumberName" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Business Partner Name" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ChangeDocument" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ObjectClass"/>
+					<PropertyRef Name="ObjectId"/>
+					<PropertyRef Name="Changenr"/>
+					<PropertyRef Name="ChangeInd"/>
+					<PropertyRef Name="Tabname"/>
+					<PropertyRef Name="Tabkey"/>
+					<PropertyRef Name="Fname"/>
+				</Key>
+				<Property MaxLength="15" Name="ObjectClass" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Object Class" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="90" Name="ObjectId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Object ID" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="Changenr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Document Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="ChangeInd" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Operation ID" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Tabname" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Table Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="70" Name="Tabkey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Table Key" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Fname" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Field" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="FieldName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Field Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="ChangeType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Operation" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="UserName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Changed By" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="UserName1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Changed By" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="Udate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="Utime" Nullable="false" Precision="0" Type="Edm.Time" sap:creatable="false" sap:label="Time" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="ChangeDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:label="Change Date" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="ChangeTime" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Change Time" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="Tcode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Transaction" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="Planchngnr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Change Number" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="254" Name="ValueNew" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="New Value" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="254" Name="ValueOld" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Old Value" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Country" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Key" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Companycode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Company Code" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="Housebankkey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="House Bank" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_Units" sap:content-version="1" sap:label="BankUnits" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Code"/>
+				</Key>
+				<Property MaxLength="3" Name="Code" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Code" sap:sortable="false" sap:text="Text" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="Text" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="RelatedBranches" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalId"/>
+					<PropertyRef Name="BpNumber"/>
+					<PropertyRef Name="RelatedBankCountry"/>
+					<PropertyRef Name="RelatedBankInternalId"/>
+				</Key>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="RelatedBankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bank Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="BankInternalId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Key" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="RelatedCountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="BpNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="BusinessPartner" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="81" Name="BusinessPartnerFullname" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="BUSINESSPARTNERFULLNAME" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="RelatedBankCountry" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Related Bank Country" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="RelatedBankInternalId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Related Bank Key" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="BankName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Name" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="BankGroup" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bank Group" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="AccountCount" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:label="Account Count" sap:unicode="false" sap:updatable="false"/>
+				<Property Name="HouseBankCount" Nullable="false" Type="Edm.Int32" sap:creatable="false" sap:label="House Bank Count" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="F4_BankBpNumber" sap:content-version="1" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="Partner"/>
+				</Key>
+				<Property MaxLength="10" Name="Partner" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Business Partner" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+				<Property MaxLength="81" Name="BpName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Business Partner Name" sap:sortable="false" sap:unicode="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="Timeline" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalID"/>
+					<PropertyRef Name="FclmBmDocNum"/>
+				</Key>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:label="Bank country" sap:unicode="false"/>
+				<Property MaxLength="15" Name="BankInternalID" Nullable="false" Type="Edm.String" sap:label="Bank number" sap:unicode="false"/>
+				<Property Name="FclmBmDocNum" Nullable="false" Type="Edm.Int16" sap:label="Item" sap:unicode="false"/>
+				<Property MaxLength="12" Name="Username" Nullable="false" Type="Edm.String" sap:label="User name" sap:unicode="false"/>
+				<Property Name="CreateDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Date" sap:unicode="false"/>
+				<Property Name="CreateTime" Nullable="false" Precision="0" Type="Edm.Time" sap:label="Time" sap:unicode="false"/>
+				<Property MaxLength="30" Name="IconName" Nullable="false" Type="Edm.String" sap:label="Name of an Icon" sap:unicode="false"/>
+				<Property MaxLength="100" Name="Title" Nullable="false" Type="Edm.String" sap:label="Title" sap:unicode="false"/>
+				<Property MaxLength="200" Name="Text" Nullable="false" Type="Edm.String" sap:label="Text" sap:unicode="false"/>
+			</EntityType>
+			<EntityType Name="C_BankBusinessPartnerVHType" sap:content-version="1" sap:label="Value Help for Bank Business Partner" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="BusinessPartnerNumber"/>
+				</Key>
+				<Property MaxLength="10" Name="BusinessPartnerNumber" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Business Partner" sap:quickinfo="Business Partner Number"/>
+				<Property MaxLength="81" Name="BusinessPartnerName" Type="Edm.String" sap:label="Business Partner Name"/>
+			</EntityType>
+			<EntityType Name="I_BankStdVHType" sap:content-version="1" sap:label="Bank Master Details" sap:value-list="true">
+				<Key>
+					<PropertyRef Name="BankCountry"/>
+					<PropertyRef Name="BankInternalID"/>
+				</Key>
+				<Property MaxLength="3" Name="BankCountry" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Bank Country" sap:quickinfo="Bank Country Key"/>
+				<Property MaxLength="15" Name="BankInternalID" Nullable="false" Type="Edm.String" sap:display-format="UpperCase" sap:label="Bank Key" sap:quickinfo="Bank Keys" sap:text="BankName"/>
+				<Property MaxLength="60" Name="BankName" Type="Edm.String" sap:label="Bank Name"/>
+				<Property MaxLength="11" Name="SWIFTCode" Type="Edm.String" sap:display-format="UpperCase" sap:label="SWIFT/BIC"/>
+				<Property MaxLength="2" Name="BankGroup" Type="Edm.String" sap:display-format="UpperCase" sap:label="Bank Group"/>
+				<Property MaxLength="15" Name="BankNumber" Type="Edm.String" sap:display-format="UpperCase" sap:label="Bank Number"/>
+			</EntityType>
+			<Association Name="BankToTimeline" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToTimeline" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToTimeline" Type="FCLM_BM_SRV.Timeline"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToTimeline">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToTimeline">
+						<PropertyRef Name="BankInternalID"/>
+						<PropertyRef Name="BankCountry"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToAddress" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToAddress" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToAddress" Type="FCLM_BM_SRV.Address"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToAddress">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToAddress">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToHouseBank" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToHouseBank" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToHouseBank" Type="FCLM_BM_SRV.HouseBank"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToHouseBank">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToHouseBank">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToBpContact" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToBpContact" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToBpContact" Type="FCLM_BM_SRV.BpContact"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToBpContact">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToBpContact">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToUsedCompany" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToUsedCompany" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToUsedCompany" Type="FCLM_BM_SRV.UsedCompany"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToUsedCompany">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToUsedCompany">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToUsedBp" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToUsedBp" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToUsedBp" Type="FCLM_BM_SRV.UsedBp"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToUsedBp">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToUsedBp">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToBankService" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToBankService" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToBankService" Type="FCLM_BM_SRV.BankService"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToBankService">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToBankService">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToDefaultableBP" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToDefaultableBP" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToDefaultableBP" Type="FCLM_BM_SRV.DefaultableBP"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToDefaultableBP">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToDefaultableBP">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToChangeDocument" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToChangeDocument" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToChangeDocument" Type="FCLM_BM_SRV.ChangeDocument"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToChangeDocument">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToChangeDocument">
+						<PropertyRef Name="BankCountry"/>
+						<PropertyRef Name="BankInternalId"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BanktoRelatedBranches" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BanktoRelatedBranches" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BanktoRelatedBranches" Type="FCLM_BM_SRV.RelatedBranches"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BanktoRelatedBranches">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Principal>
+					<Dependent Role="ToRole_BanktoRelatedBranches">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="BankToCountInfo" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_BankToCountInfo" Type="FCLM_BM_SRV.Bank"/>
+				<End Multiplicity="*" Role="ToRole_BankToCountInfo" Type="FCLM_BM_SRV.BankCountInfo"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_BankToCountInfo">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Principal>
+					<Dependent Role="ToRole_BankToCountInfo">
+						<PropertyRef Name="BankInternalId"/>
+						<PropertyRef Name="BankCountry"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="FCLM_BM_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+				<EntitySet EntityType="FCLM_BM_SRV.C_BankBusinessPartnerVHType" Name="C_BankBusinessPartnerVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.I_BankStdVHType" Name="I_BankStdVH" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_TypeOfSignature" Name="F4_TypeOfSignatureSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_DeliveryType" Name="F4_DeliveryTypeSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_InstructionKey" Name="F4_InstructionKeySet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_IsoCurrencyCode" Name="F4_IsoCurrencyCodeSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_MultiKey" Name="F4_MultiKeySet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Position" Name="F4_PositionSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Rating" Name="F4_RatingSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Region" Name="F4_RegionSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Title" Name="F4_TitleSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.UsedBp" Name="UsedBpSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_CountryDialingCode" Name="F4_CountryDialingCodeSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.BankCountInfo" Name="BankCountInfoSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.Bank" Name="BankSet" sap:content-version="1" sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:searchable="true"/>
+				<EntitySet EntityType="FCLM_BM_SRV.Address" Name="AddressSet" sap:content-version="1" sap:deletable="false" sap:pageable="false" sap:searchable="true"/>
+				<EntitySet EntityType="FCLM_BM_SRV.BpContact" Name="BpContactSet" sap:content-version="1" sap:deletable="false" sap:pageable="false" sap:searchable="true"/>
+				<EntitySet EntityType="FCLM_BM_SRV.HouseBank" Name="HouseBankSet" sap:content-version="1" sap:deletable="false" sap:pageable="false" sap:searchable="true"/>
+				<EntitySet EntityType="FCLM_BM_SRV.UsedCompany" Name="UsedCompanySet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Department" Name="F4_DepartmentSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Timezone" Name="F4_TimezoneSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_TransactionType" Name="F4_TransactionTypeSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_PartnerNumber" Name="F4_PartnerNumberSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_BpGroup" Name="F4_BpGroupSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_CommunicationLanguage" Name="F4_CommunicationLanguageSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Swift" Name="F4_SwiftSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_BankNumber" Name="F4_BankNumberSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_CompanyCode" Name="F4_CompanyCodeSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Country" Name="F4_CountrySet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_ExternalTransaction" Name="F4_ExternalTransactionSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.DefaultableBP" Name="DefaultableBPSet" sap:addressable="false" sap:content-version="1" sap:deletable="false" sap:pageable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_IntradayBkStmntImportRule" Name="F4_IntradayBkStmntImportRuleSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.BankService" Name="BankServiceSet" sap:content-version="1" sap:deletable="false" sap:pageable="false" sap:searchable="true"/>
+				<EntitySet EntityType="FCLM_BM_SRV.AnalyticalBank" Name="AnalyticalBankSet" sap:content-version="1" sap:deletable="false" sap:pageable="false" sap:searchable="true"/>
+				<EntitySet EntityType="FCLM_BM_SRV.ChangeDocument" Name="ChangeDocumentSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_Units" Name="F4_UnitsSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.RelatedBranches" Name="RelatedBranchesSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:searchable="true" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.F4_BankBpNumber" Name="F4_BankBpNumberSet" sap:addressable="false" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="FCLM_BM_SRV.Timeline" Name="TimelineSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<AssociationSet Association="FCLM_BM_SRV.BankToBankService" Name="BankToBankServiceSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToBankService"/>
+					<End EntitySet="BankServiceSet" Role="ToRole_BankToBankService"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToHouseBank" Name="BankToHouseBankSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToHouseBank"/>
+					<End EntitySet="HouseBankSet" Role="ToRole_BankToHouseBank"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToDefaultableBP" Name="BankToDefaultableBPSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToDefaultableBP"/>
+					<End EntitySet="DefaultableBPSet" Role="ToRole_BankToDefaultableBP"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToUsedBp" Name="BankToUsedBpSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToUsedBp"/>
+					<End EntitySet="UsedBpSet" Role="ToRole_BankToUsedBp"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToChangeDocument" Name="BankToChangeDocumentSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToChangeDocument"/>
+					<End EntitySet="ChangeDocumentSet" Role="ToRole_BankToChangeDocument"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToAddress" Name="BankToAddressSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToAddress"/>
+					<End EntitySet="AddressSet" Role="ToRole_BankToAddress"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToCountInfo" Name="BankToCountInfoSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToCountInfo"/>
+					<End EntitySet="BankCountInfoSet" Role="ToRole_BankToCountInfo"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToBpContact" Name="BankToBpContactSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToBpContact"/>
+					<End EntitySet="BpContactSet" Role="ToRole_BankToBpContact"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToUsedCompany" Name="BankToUsedCompanySet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToUsedCompany"/>
+					<End EntitySet="UsedCompanySet" Role="ToRole_BankToUsedCompany"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BankToTimeline" Name="BankToTimelineSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BankToTimeline"/>
+					<End EntitySet="TimelineSet" Role="ToRole_BankToTimeline"/>
+				</AssociationSet>
+				<AssociationSet Association="FCLM_BM_SRV.BanktoRelatedBranches" Name="BanktoRelatedBranchesSet" sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="BankSet" Role="FromRole_BanktoRelatedBranches"/>
+					<End EntitySet="RelatedBranchesSet" Role="ToRole_BanktoRelatedBranches"/>
+				</AssociationSet>
+				<FunctionImport EntitySet="BankSet" Name="LOCK_BNKA" ReturnType="FCLM_BM_SRV.Bank" m:HttpMethod="POST">
+					<Parameter MaxLength="32" Mode="In" Name="IV_BANKL" Type="Edm.String"/>
+					<Parameter MaxLength="32" Mode="In" Name="IV_BANKS" Type="Edm.String"/>
+				</FunctionImport>
+			</EntityContainer>
+			<Annotations Target="FCLM_BM_SRV.FCLM_BM_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Bool="true" Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue EnumMember="None" Property="Rollup"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+					<Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="Bank"/>
+						<PropertyValue Property="TypeNamePlural" String="Banks"/>
+						<PropertyValue Property="Title">
+							<Record Type="com.sap.vocabularies.UI.v1.DataField">
+								<PropertyValue Path="BankInternalId" Property="Value"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="com.sap.vocabularies.UI.v1.DataField">
+								<PropertyValue Path="BankName" Property="Value"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.AnalyticalBank" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+					<Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="Bank"/>
+						<PropertyValue Property="TypeNamePlural" String="Banks"/>
+						<PropertyValue Property="Title">
+							<Record Type="com.sap.vocabularies.UI.v1.DataField">
+								<PropertyValue Path="BankInternalId" Property="Value"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="com.sap.vocabularies.UI.v1.DataField">
+								<PropertyValue Path="BankName" Property="Value"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.HouseBank/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Company Codes"/>
+						<PropertyValue Property="CollectionPath" String="F4_CompanyCodeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CompanyCode"/>
+									<PropertyValue Property="ValueListProperty" String="Bukrs"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Butxt"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/BpNumber" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="C_BankBusinessPartnerVH"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BpNumber"/>
+									<PropertyValue Property="ValueListProperty" String="BusinessPartnerNumber"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BusinessPartnerName"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/Swift" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search help for swift"/>
+						<PropertyValue Property="CollectionPath" String="F4_SwiftSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Swift"/>
+									<PropertyValue Property="ValueListProperty" String="SWIFT"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BankCountry"/>
+									<PropertyValue Property="ValueListProperty" String="BANKS"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/Ruleforintrdaybnkstatimport" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Value help for rule of importing intraday bank statement"/>
+						<PropertyValue Property="CollectionPath" String="F4_IntradayBkStmntImportRuleSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Ruleforintrdaybnkstatimport"/>
+									<PropertyValue Property="ValueListProperty" String="Intrabkstaruleexternalid"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Rulename"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/BankNumber" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="I_BankStdVH"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BankNumber"/>
+									<PropertyValue Property="ValueListProperty" String="BankInternalID"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BankCountry"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BankName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BankNumber"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.HouseBank/PartnerNumber" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search Help Only for Partner in Conjunction with House Banks"/>
+						<PropertyValue Property="CollectionPath" String="F4_PartnerNumberSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PartnerNumber"/>
+									<PropertyValue Property="ValueListProperty" String="Parnum"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.HouseBank/InstructionKey" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Help_View for T015W"/>
+						<PropertyValue Property="CollectionPath" String="F4_InstructionKeySet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="InstructionKey"/>
+									<PropertyValue Property="ValueListProperty" String="Dtaws"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Dtzus"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.HouseBank/IsoCurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search Help for ISO Currency"/>
+						<PropertyValue Property="CollectionPath" String="F4_IsoCurrencyCodeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="IsoCurrencyCode"/>
+									<PropertyValue Property="ValueListProperty" String="Isocd"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Waers"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Ltext"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/CommunicationLanguage" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_CommunicationLanguageSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CommunicationLanguage"/>
+									<PropertyValue Property="ValueListProperty" String="Language"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Name"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/AddressCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Help_View for Countries"/>
+						<PropertyValue Property="CollectionPath" String="F4_CountrySet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="AddressCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="AddressCountryText"/>
+									<PropertyValue Property="ValueListProperty" String="Name"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/State" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search help for region (table T005S)"/>
+						<PropertyValue Property="CollectionPath" String="F4_RegionSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="State"/>
+									<PropertyValue Property="ValueListProperty" String="Region"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="AddressCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/BankCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Help_View for Countries"/>
+						<PropertyValue Property="CollectionPath" String="F4_CountrySet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BankCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CountryName"/>
+									<PropertyValue Property="ValueListProperty" String="Name"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/TelephoneNumberCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_CountryDialingCodeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="TelephoneNumberCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="CountryName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="TelephoneDialingCode"/>
+									<PropertyValue Property="ValueListProperty" String="CountryDialingCode"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/MobileNumberCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_CountryDialingCodeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MobileNumberCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="CountryName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MobileDialingCode"/>
+									<PropertyValue Property="ValueListProperty" String="CountryDialingCode"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/FaxCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_CountryDialingCodeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="FaxCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="CountryName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="FaxDialingCode"/>
+									<PropertyValue Property="ValueListProperty" String="CountryDialingCode"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/Region" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search help for region (table T005S)"/>
+						<PropertyValue Property="CollectionPath" String="F4_RegionSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Region"/>
+									<PropertyValue Property="ValueListProperty" String="Region"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BankCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="RegionName"/>
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/Nation" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_MultiKeySet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Nation"/>
+									<PropertyValue Property="ValueListProperty" String="NATION"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="NationName"/>
+									<PropertyValue Property="ValueListProperty" String="NATION_TEX"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/BpGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Help View for Table TB001 (Groupings)"/>
+						<PropertyValue Property="CollectionPath" String="F4_BpGroupSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BpGroup"/>
+									<PropertyValue Property="ValueListProperty" String="BU_GROUP"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BpGroupText"/>
+									<PropertyValue Property="ValueListProperty" String="BpGroupText"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/Rating" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Value Help for Business Partner Rating"/>
+						<PropertyValue Property="CollectionPath" String="F4_RatingSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Rating"/>
+									<PropertyValue Property="ValueListProperty" String="Rating"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="RatingText"/>
+									<PropertyValue Property="ValueListProperty" String="Xrating"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BpContact/Title" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_TitleSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Title"/>
+									<PropertyValue Property="ValueListProperty" String="Title"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Title_Medi"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BpContact/Function" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_PositionSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Function"/>
+									<PropertyValue Property="ValueListProperty" String="Pafkt"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Bez30"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BpContact/Department" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_DepartmentSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Department"/>
+									<PropertyValue Property="ValueListProperty" String="Abtnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Bez20"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/PoBoxCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Help_View for Countries"/>
+						<PropertyValue Property="CollectionPath" String="F4_CountrySet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PoBoxCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Name"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/PoBoxRegion" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search help for region (table T005S)"/>
+						<PropertyValue Property="CollectionPath" String="F4_RegionSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PoBoxRegion"/>
+									<PropertyValue Property="ValueListProperty" String="Region"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PoBoxCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/DeliveryServiceType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_DeliveryTypeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="DeliveryServiceType"/>
+									<PropertyValue Property="ValueListProperty" String="DELI_SERV_TYPE"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="DELI_SERV_TEXT"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/HasHouseBanks" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_UnitsSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="HasHouseBanks"/>
+									<PropertyValue Property="ValueListProperty" String="Code"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/HasBankAccounts" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_UnitsSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="HasBankAccounts"/>
+									<PropertyValue Property="ValueListProperty" String="Code"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/IsMarkedAsDeleted" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_UnitsSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="IsMarkedAsDeleted"/>
+									<PropertyValue Property="ValueListProperty" String="Code"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Address/Timezone" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Bank Management:Timezone search help"/>
+						<PropertyValue Property="CollectionPath" String="F4_TimezoneSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Timezone"/>
+									<PropertyValue Property="ValueListProperty" String="Timezone"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="TimezoneName"/>
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.HouseBank/TypeOfSignature" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_TypeOfSignatureSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="TypeOfSignature"/>
+									<PropertyValue Property="ValueListProperty" String="Code"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Text"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BpContact/AddressCountry" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Help_View for Countries"/>
+						<PropertyValue Property="CollectionPath" String="F4_CountrySet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="AddressCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Name"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Nationality"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BpContact/Region" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Search help for region (table T005S)"/>
+						<PropertyValue Property="CollectionPath" String="F4_RegionSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Region"/>
+									<PropertyValue Property="ValueListProperty" String="Region"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterIn">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="AddressCountry"/>
+									<PropertyValue Property="ValueListProperty" String="Country"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BankService/PaymentExternalTransacType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_ExternalTransactionSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PaymentExternalTransacType"/>
+									<PropertyValue Property="ValueListProperty" String="PaymentExternalTransacType"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="AmountDebitCreditCode"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BankStatementPostingRule"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="InterpretationAlgorithm"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="PaymentTransactionTypeGroup"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.BankService/PaymentTransactionTypeGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_TransactionTypeSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PaymentTransactionTypeGroup"/>
+									<PropertyValue Property="ValueListProperty" String="TransactionCode"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.Bank/BankInternalId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="I_BankStdVH"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BankInternalId"/>
+									<PropertyValue Property="ValueListProperty" String="BankInternalID"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BankCountry"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BankName"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="FCLM_BM_SRV.DefaultableBP/BusinessPartnerNo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record>
+						<PropertyValue Property="CollectionPath" String="F4_BankBpNumberSet"/>
+						<PropertyValue Bool="true" Property="SearchSupported"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BusinessPartnerNo"/>
+									<PropertyValue Property="ValueListProperty" String="Partner"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="BpName"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

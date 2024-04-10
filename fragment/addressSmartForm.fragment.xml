@@ -1,0 +1,237 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<smartForm:SmartForm id="fin.cash.bankmaster.manage.addressSmartForm" title="{i18n>ADVANCED_ADDRESS_SMARTFORM_TITLE}">
+		<smartForm:layout>
+			<smartForm:Layout id="_IDEGen_layout0" columnsM="2" columnsL="3" columnsXL="4"/>
+		</smartForm:layout>
+		<smartForm:customToolbar>
+			<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent" visible="false"/>
+		</smartForm:customToolbar>
+		<smartForm:Group id="nameGroup" label="{i18n>NAME}">
+			<smartForm:GroupElement id="titleGroupElement">
+				<smartField:SmartField id="titleField" value="{Title}">
+					<smartField:configuration>
+						<smartField:Configuration id="title_configuration" controlType="dropDownList" displayBehaviour="idAndDescription"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement0">
+				<smartField:SmartField id="_IDEGen_smartfield0" value="{Name}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="name2GroupElement">
+				<smartField:SmartField id="name2Field" value="{Name2}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="name3GroupElement">
+				<smartField:SmartField id="name3Field" value="{Name3}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="name4GroupElement">
+				<smartField:SmartField id="name4Field" value="{Name4}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="searchTermGroup" label="{i18n>SEARCH_TERM_AND_COMMENTS}">
+			<smartForm:GroupElement id="SearchTeamGroupElement" label="{i18n>SEARCH_TERM_1_2}">
+				<smartField:SmartField id="SearchTerm1Field" value="{SearchTerm1}"/>
+				<smartField:SmartField id="SearchTerm2Field" value="{SearchTerm2}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="commentsGroup">
+				<smartField:SmartField id="commentsField" value="{Comments}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="streetAddressGroup" label="{i18n>STREET_ADDRESS}">
+			<smartForm:GroupElement id="nationGroupElement">
+				<smartField:SmartField id="nationField" value="{Nation}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="buildingCodeGroup" label="{i18n>BULIDING_ROOM_FLOOR}">
+				<smartField:SmartField id="buildingCodeField" value="{Building}">
+					<smartField:layoutData>
+						<layout:GridData id="buildingCodeLayout" span="L2 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="RoomNumberField" value="{RoomNumber}">
+					<smartField:layoutData>
+						<layout:GridData id="RoomNumberLayout" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="FloorField" value="{Floor}">
+					<smartField:layoutData>
+						<layout:GridData id="FloorLayout" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_1">
+				<smartField:SmartField id="_IDEGen_smartfield3" value="{CareOfName}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement1">
+				<smartField:SmartField id="_IDEGen_smartfield4" value="{AddressLine1}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement2">
+				<smartField:SmartField id="_IDEGen_smartfield5" value="{AddressLine2}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement3">
+				<smartField:SmartField id="_IDEGen_smartfield6" value="{HouseNumber}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata0" span="L2 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="_IDEGen_smartfield7" value="{Street}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_2">
+				<smartField:SmartField id="_IDEGen_smartfield8" value="{HouseNumberSupplement}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_3">
+				<smartField:SmartField id="_IDEGen_smartfield9" value="{AddressLine3}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_4">
+				<smartField:SmartField id="_IDEGen_smartfield10" value="{AddressLine4}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_6">
+				<smartField:SmartField id="_IDEGen_smartfield12" value="{District}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_5">
+				<smartField:SmartField id="_IDEGen_smartfield11" value="{Village}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement7">
+				<smartField:SmartField id="postCodeField" value="{PostalCode}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement5">
+				<smartField:SmartField id="_IDEGen_smartfield14" value="{AddressCity}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="countyGroup">
+				<smartField:SmartField id="countyField" value="{County}"></smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="townshipGroup">
+				<smartField:SmartField id="townshipField" value="{TownShip}"></smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement6">
+				<smartField:SmartField id="addressCountryField" value="{AddressCountry}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement4">
+				<smartField:SmartField id="_IDEGen_smartfield13" value="{State}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement8">
+				<smartField:SmartField id="timezoneField" value="{Timezone}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_8">
+				<smartField:SmartField id="_IDEGen_smartfield15" value="{Taxjurisdiction}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_7">
+				<smartField:SmartField id="transportZoneField" value="{TransportationZone}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="StructureGroupGroup">
+				<smartField:SmartField id="StructureGroupField" value="{StructureGroup}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="StreetAddressUndeliverableFlagGroup">
+				<smartField:SmartField id="StreetAddressUndeliverableFlagField" value="{StreetAddressUndeliverableFlag}">
+					<smartField:configuration>
+						<smartField:Configuration id="streetAddressUndeliverable_configuration" controlType="dropDownList" displayBehaviour="idAndDescription"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="POBoxGroup" label="{i18n>POBOX_ADDRESS}">
+			<smartForm:GroupElement id="element_11">
+				<smartField:SmartField id="poBoxField" value="{PoBox}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_12">
+				<smartField:SmartField id="_IDEGen_smartfield16" value="{PoBoxWithoutNumber}">
+					<smartField:configuration>
+						<smartField:Configuration id="_IDEGen_configuration0" controlType="checkBox" displayBehaviour="descriptionAndId"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_10">
+				<smartField:SmartField id="deliveryServiceTypeField" value="{DeliveryServiceType}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="deliveryServiceNumberGroup">
+				<smartField:SmartField id="deliveryServiceNumberField" value="{DeliveryServiceNumber}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_14">
+				<smartField:SmartField id="_IDEGen_smartfield17" value="{PoBoxLobby}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_13">
+				<smartField:SmartField id="poBoxPostalCodeField" value="{PoBoxPostalCode}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_15">
+				<smartField:SmartField id="_IDEGen_smartfield18" value="{PoBoxCity}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_17">
+				<smartField:SmartField id="_IDEGen_smartfield20" value="{PoBoxCountry}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_16">
+				<smartField:SmartField id="_IDEGen_smartfield19" value="{PoBoxRegion}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="element_9">
+				<smartField:SmartField id="companyPostalCodeField" value="{CompanyPostalCode}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="POBoxAddressUndeliverableFlagGroup">
+				<smartField:SmartField id="POBoxAddressUndeliverableFlageField" value="{POBoxAddressUndeliverableFlag}">
+					<smartField:configuration>
+						<smartField:Configuration id="POBoxAddressUndeliverable_configuration" controlType="dropDownList" displayBehaviour="idAndDescription"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="communicationGroup" label="{i18n>COMMUNICATION}">
+			<smartForm:GroupElement id="_IDEGen_groupelement10">
+				<smartField:SmartField id="_IDEGen_smartfield21" value="{CommunicationLanguage}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement11">
+				<smartField:SmartField id="TelephoneNumberCountryField" value="{TelephoneNumberCountry}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata1" span="L2 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="_IDEGen_smartfield22" value="{TelephoneDialingCode}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata2" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="_IDEGen_smartfield23" value="{TelephoneNumber}"/>
+				<smartField:SmartField id="_IDEGen_smartfield24" value="{PhoneNumberExtension}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata3" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement12">
+				<smartField:SmartField id="_IDEGen_smartfield25" value="{MobileNumberCountry}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata4" span="L2 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="_IDEGen_smartfield26" value="{MobileDialingCode}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata5" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="MobileNumber" value="{MobileNumber}" change="onMobileNumberChanged"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement13">
+				<smartField:SmartField id="_IDEGen_smartfield27" value="{FaxCountry}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata6" span="L2 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="_IDEGen_smartfield28" value="{FaxDialingCode}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata7" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+				<smartField:SmartField id="_IDEGen_smartfield29" value="{FaxNumber}"/>
+				<smartField:SmartField id="_IDEGen_smartfield30" value="{FaxNumberExtension}">
+					<smartField:layoutData>
+						<layout:GridData id="_IDEGen_griddata8" span="L1 M2 S4"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="_IDEGen_groupelement14">
+				<smartField:SmartField id="emailAddressField" value="{EmailAddress}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

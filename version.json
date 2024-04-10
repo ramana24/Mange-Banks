@@ -1,0 +1,13 @@
+{
+  "application": "fin.cash.bankmaster.manage",
+  "version": "9.0.9",
+  "buildNumber": "39",
+  "buildId": "39",
+  "branch": "detached",
+  "revision": "6c49670f095aec59ff2d1635629daa60011c5376",
+  "GitURL": "",
+  "buildStatus": "P",
+  "translationComplete": "true",
+  "cidi": "",
+  "cfdCM": ""
+}

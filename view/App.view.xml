@@ -1,0 +1,17 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="fin.cash.bankmaster.manage.controller.App" 
+	displayBlock="true" 
+	async="true"
+	height="100%">
+	<App id="fioriContent" 
+		 busy="{view>/busy}" 
+		 busyIndicatorDelay="{view>/delay}">
+	</App>
+</mvc:View>

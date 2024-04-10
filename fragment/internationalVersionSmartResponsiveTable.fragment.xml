@@ -1,0 +1,26 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:Table="sap.m.Table" xmlns:Column="sap.m.Column">
+	<smarttable:SmartTable id="fin.cash.bankmaster.manage.internationalVersionSmartResponsiveTable" tableType="ResponsiveTable"
+		entitySet="AddressSet" enableAutoBinding="false" header="{i18n>INTERNATIONAL_VERSION_SMART_RESPONSIVE_TABLE_HEADER}" showRowCount="true"
+		useVariantManagement="true" beforeRebindTable="onBeforeRebindInternationVersionTable" visible="false" demandPopin="true"
+		persistencyKey="fin.cash.bankmaster.manage.interversionPersKey" placeToolbarInTable="true">
+		<smarttable:customToolbar>
+			<OverflowToolbar id="_IDEGen_overflowtoolbar0" design="Transparent">
+				<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+				<Button text="{i18n>ADD}" press="onAddInternationalVersionPressed" id="addInternationalVersionIcon"/>
+				<Button text="{i18n>DELETE_BUTTON}" press="onDeleteInternationalVersionIconPressed" id="deleteInternationalVersionIcon"/>
+			</OverflowToolbar>
+		</smarttable:customToolbar>
+		<Table id="onInternationalVersionTableMode" sticky="ColumnHeaders,HeaderToolbar">
+			<columns></columns>
+			<items>
+				<ColumnListItem id="_IDEGen_columnlistitem0" type="Navigation" press="onInternationVersionListItemPressed"></ColumnListItem>
+			</items>
+		</Table>
+	</smarttable:SmartTable>
+</core:FragmentDefinition>

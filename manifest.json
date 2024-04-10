@@ -1,0 +1,285 @@
+{
+	"_version": "1.11.0",
+
+	"sap.app": {
+
+		"id": "fin.cash.bankmaster.manage",
+		"type": "application",
+		"applicationVersion": {
+			"version": "9.0.9"
+		},
+
+		"i18n": "i18n/i18n.properties",
+		"title": "{{FULLSCREEN_TITLE}}",
+		"description": "{{APP_DESCRIPTION}}",
+
+		"ach": "FIN-FIO-CLM",
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/FCLM_BM_SRV/",
+				"type": "OData"
+			}
+		},
+		"resources": "resources.json",
+
+		"crossNavigation": {
+			"inbounds": {
+				"bankManage": {
+					"semanticObject": "Bank",
+					"action": "manage"
+				}
+			},
+			"outbounds": {
+				"bankManage": {
+					"semanticObject": "Bank",
+					"action": "manage"
+				},
+				"ManageBankHierarchy":{
+					"semanticObject":"BankAccount",
+					"action":"maintainHierarchy"
+				}
+			}
+		}
+	},
+
+	"sap.ui": {
+
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+
+	"sap.ui5": {
+		
+		"services":{
+			"ShellUIService": {
+             "lazy": false,
+             "factoryName": "sap.ushell.ui5service.ShellUIService"
+         }
+		},
+
+		"dependencies": {
+			"minUI5Version": "1.90.7",
+			"libs": {
+				"sap.m": {
+					"lazy": false
+				},
+				"sap.f": {
+					"lazy": false
+				},
+				"sap.uxap": {
+					"minVersion": "1.26.0",
+					"lazy": false
+				},
+				"sap.ui.core": {
+					"lazy": false
+				},
+				"sap.ui.comp": {
+					"lazy": false
+				},
+				"sap.ui.table": {
+					"lazy": false
+				},
+				"sap.suite.ui.generic.template": {
+					"lazy": false
+				},
+				"sap.suite.ui.commons": {
+					"lazy": true
+				},
+				"sap.ushell": {
+					"lazy": true
+				},
+				"sap.ui.layout": {
+					"lazy": false
+				},
+				"sap.fin.central.lib": {
+					"lazy": true
+				},
+				"sap.ui.generic.app":{ 
+					"lazy": false
+				}
+			}
+		},
+
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "fin.cash.bankmaster.manage.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"metadataUrlParams": {}
+				}
+			}
+		},
+
+		"rootView": {
+			"id": "rootView",
+			"viewName": "fin.cash.bankmaster.manage.view.App",
+			"async": true,
+			"type": "XML"
+		},
+
+		"config": {
+			"serviceUrl": "/sap/opu/odata/sap/FCLM_BM_SRV/",
+			"fullWidth": "true",
+			"sapFiori2Adaptation": true
+		},
+
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"async": true,
+				"viewType": "XML",
+				"viewPath": "fin.cash.bankmaster.manage.view",
+				"controlId": "fioriContent",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "NotFound"
+				}
+			},
+
+			"routes": [{
+				"pattern": "",
+				"name": "fullScreen",
+				"target": "fullScreen"
+			}, {
+				"pattern": "{?query}",
+				"name": "localstate-new",
+				"target": "fullScreen"
+			}, {
+				"pattern": "ManageUsedUnits/{bankContextPath}",
+				"name": "ManageUsedUnitsScreen",
+				"target": "ManageUsedUnitsScreen"
+			}, {
+				"pattern": "Bank/{mode}/{bankContextPath}/{bankInternalId}/:previousView:/",
+				"name": "BankScreen",
+				"target": "BankScreen"
+			}, {
+				"pattern": "selectExistingBanks/{bpNumber}/{bankCountry}/{bankInternalId}",
+				"name": "selectExistingBanksScreen",
+				"target": "selectExistingBanksScreen"
+			}, {
+				"pattern": "Address/{mode}/{bankContextPath}/{addressContextPath}",
+				"name": "AddressScreen",
+				"target": "AddressScreen"
+			}, {
+				"pattern": "HouseBank/{mode}/{bankContextPath}/{houseBankContextPath}",
+				"name": "HouseBankScreen",
+				"target": "HouseBankScreen"
+			}, {
+				"pattern": "Contact/{mode}/{bankContextPath}/{contactContextPath}",
+				"name": "ContactScreen",
+				"target": "ContactScreen"
+			}, {
+				"pattern": "BankServiceMapping/{mode}/{bankContextPath}/{serviceCodePath}",
+				"name": "ServiceMappingScreen",
+				"target": "ServiceMappingScreen"
+			}, {
+				"pattern": "DefaultableBP/{mode}/{bankContextPath}/{defaultableBPPath}",
+				"name": "DefaultableBPScreen",
+				"target": "DefaultableBPScreen"
+			}, {
+				"pattern": "RiskBP/{mode}/{bankContextPath}/{riskBPPath}",
+				"name": "RiskBPScreen",
+				"target": "RiskBPScreen"
+			}, {
+				"pattern": "InternationalVersion/{mode}/{bankContextPath}/{addressContextPath}/{internationalVersionContextPath}",
+				"name": "InternationalVersionScreen",
+				"target": "InternationalVersionScreen"
+			}],
+			"targets": {
+				"fullScreen": {
+					"viewName": "ManageBanks",
+					"viewId": "ManageBanks",
+					"viewLevel": 1
+				},
+				"ManageUsedUnitsScreen": {
+					"viewName": "ManageUsedUnits",
+					"viewId": "ManageUsedUnits",
+					"viewLevel": 2
+				},
+				"BankScreen": {
+					"viewName": "Bank",
+					"viewId": "Bank",
+					"viewLevel": 2
+				},
+				"selectExistingBanksScreen": {
+					"viewName": "manageExistingBanks",
+					"viewId": "manageExistingBanks",
+					"viewLevel": 2
+				},
+				"AddressScreen": {
+					"viewName": "Address",
+					"viewId": "Address",
+					"viewLevel": 3
+				},
+				"HouseBankScreen": {
+					"viewName": "HouseBank",
+					"viewId": "HouseBank",
+					"viewLevel": 3
+				},
+				"ContactScreen": {
+					"viewName": "Contact",
+					"viewId": "Contact",
+					"viewLevel": 3
+				},
+				"ServiceMappingScreen": {
+					"viewName": "BankServiceMapping",
+					"viewId": "BankServiceMapping",
+					"viewLevel": 3
+				},
+				"DefaultableBPScreen": {
+					"viewName": "DefaultableBP",
+					"viewId": "DefaultableBP",
+					"viewLevel": 3
+				},
+				"RiskBPScreen": {
+					"viewName": "RiskBP",
+					"viewId": "RiskBP",
+					"viewLevel": 3
+				},
+				"InternationalVersionScreen": {
+					"viewName": "InternationalVersion",
+					"viewId": "InternationalVersion",
+					"viewLevel": 4
+				},
+				"NotFound": {
+					"viewName": "NotFound",
+					"viewId": "NotFound"
+				}
+			}
+		},
+
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+
+		"flexEnabled": true
+
+	},
+	"sap.fiori": {
+		
+		"registrationIds": [
+			"F1574"
+		],
+		"archeType": "transactional"
+	}
+}
